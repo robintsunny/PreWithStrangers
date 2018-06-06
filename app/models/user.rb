@@ -19,28 +19,28 @@ class User < ApplicationRecord
   before_validation :ensure_session_token
   attr_reader :password
 
-  belongs_to :hometown, {
-    primary_key: :id,
-    foreign_key: :hometown_id,
-    class_name: :City
-  }
+  # belongs_to :hometown, {
+  #   primary_key: :id,
+  #   foreign_key: :hometown_id,
+  #   class_name: :City
+  # }
 
-    has_many :hosted_events, {
-    primary_key: :id,
-    foreign_key: :host_id,
-    class_name: :Event
-  }
-
-  has_many :rsvps, {
-      primary_key: :id,
-      foreign_key: :user_id,
-      class_name: :Event
-  }
-
-  has_many :joined_events, {
-    through: :rsvps,
-    source: :event
-  }
+  #   has_many :hosted_events, {
+  #   primary_key: :id,
+  #   foreign_key: :host_id,
+  #   class_name: :Event
+  # }
+  #
+  # has_many :rsvps, {
+  #     primary_key: :id,
+  #     foreign_key: :user_id,
+  #     class_name: :Event
+  # }
+  #
+  # has_many :joined_events, {
+  #   through: :rsvps,
+  #   source: :event
+  # }
 
   def password=(password)
     @password = password
