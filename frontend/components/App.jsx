@@ -10,7 +10,7 @@ import SplashContainer from './splash/splash_container'
 const App = () => (
   <div>
     <header>
-      <h1>Let's Rage 🏋🏾‍</h1>
+      <h1> 🏋🏾‍ Preworkout With Strangers</h1>                      
       <GreetingContainer />
     </header>
 

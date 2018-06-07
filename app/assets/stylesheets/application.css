@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+.login-form-container {
+  max-width: 1020px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1em;
+
+}
+
+.login-form-box {
+  padding-top: 3em;
+  padding-bottom: 3em;
+}

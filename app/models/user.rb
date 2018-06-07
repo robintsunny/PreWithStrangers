@@ -3,18 +3,19 @@
 # Table name: users
 #
 #  id              :bigint(8)        not null, primary key
-#  username        :string           not null
 #  password_digest :string           not null
 #  session_token   :string           not null
-#  hometown_id     :integer          not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  fname           :string
+#  email           :string
+#  home_city_id    :integer          not null
 #
 
 class User < ApplicationRecord
 
-  validates :username, :session_token, :password_digest, presence: true
-  validates :username, :session_token, uniqueness: true
+  validates :email, :session_token, :password_digest, presence: true
+  validates :email, :session_token, uniqueness: true
   validates :password, length: {minimum: 6, allow_nil: true}
   before_validation :ensure_session_token
   attr_reader :password
@@ -51,8 +52,8 @@ class User < ApplicationRecord
     BCrypt::Password.new(self.password_digest).is_password?(pw)
   end
 
-  def self.find_by_cred(un,pw)
-    user = User.find_by(username: un)
+  def self.find_by_cred(email,pw)
+    user = User.find_by(email: email)
     user && user.is_password?(pw) ? user : nil
   end
 
