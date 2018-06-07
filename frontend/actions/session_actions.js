@@ -25,7 +25,7 @@ export const logoutCurrentUser = () => {
 
 export const signup = user => dispatch => (
   SessionApiUtil.signup(user).then(user => {
-    debugger
+
     return dispatch(receiveCurrentUser(user))
     }, err => (
     dispatch(receiveErrors(err.responseJSON))

@@ -5,8 +5,10 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
-      password: ''
+      fname: 'First Name',
+      email: 'Email',
+      password: 'Password',
+      home_city: 'DC'
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -36,33 +38,58 @@ class SessionForm extends React.Component {
   }
 
   render() {
+
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to PreworkoutWithStrangers!
+          Join PreworkoutWithStrangers!
           <br/>
-          Please {this.props.formType} or {this.props.navLink}
           {this.renderErrors()}
           <div className="login-form">
-            <br/>
-            <label>Username:
+            <label>
               <input type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
+                value={this.state.fname   }
+                onChange={this.update('fname')}
                 className="login-input"
               />
             </label>
             <br/>
-            <label>Password:
+
+            <label>
+              <input type="text"
+                value={this.state.email   }
+                onChange={this.update('email')}
+                className="login-input"
+              />
+            </label>
+
+            <br/>
+
+            <label>
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
               />
             </label>
+
             <br/>
+
+              <select name="cities">
+                <option value="dc">DC</option>
+                <option value="london">London</option>
+                <option value="boston">Boston</option>
+                <option value="sfbay">SF/Bay Area</option>
+                <option value="toronto">Toronto</option>
+                <option value="newyorkcity">New York City</option>
+                <option value="baltimore">Baltimore</option>
+              </select>
+
+              <br/>
+
             <input className="session-submit" type="submit" value={this.props.formType} />
-          </div>
+
+        </div>
         </form>
       </div>
     );

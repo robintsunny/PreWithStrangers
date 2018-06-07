@@ -7,21 +7,39 @@ import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashContainer from './splash/splash_container'
 
-const App = () => (
-  <div>
-    <header>
-      <h1> 🏋🏾‍ Preworkout With Strangers</h1>                      
-      <GreetingContainer />
-    </header>
+const App = () => {
 
-    <Switch>
-      <AuthRoute path="/login" component={LogInFormContainer} />
-      <AuthRoute path="/signup" component={SignUpFormContainer} />
-      <ProtectedRoute exact path="/" component={SplashContainer} />
-    </Switch>
+  return (
+
+    <div>
+      <header>
+        <h1> 🏋🏾‍ Pre With Strangers</h1>
+        &nbsp;
+        Pre-Times
+        &nbsp;
+        Hosting
+        &nbsp;
+        About
+        &nbsp;
+        <Link to="/login">Sign In</Link>
+        &nbsp;
+        <Link to="/signup">Sign Up</Link>
+        &nbsp;
+        <GreetingContainer />
+      </header>
+
+      <Switch>
+
+        <AuthRoute path="/signup" component={SignUpFormContainer} />
+        <AuthRoute path="/login" component={LogInFormContainer} />
 
 
-  </div>
-);
+      </Switch>
+
+
+    </div>
+  )
+
+};
 
 export default App;
