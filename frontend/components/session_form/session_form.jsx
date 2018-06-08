@@ -38,6 +38,31 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    let fname;
+    let homeCity;
+
+    if (this.props.formType === 'signup') {
+      fname =
+      <label>
+        <input type="text"
+          value={this.state.fname   }
+          onChange={this.update('fname')}
+          className="login-input"
+        />
+      </label>
+
+      homeCity =
+      <select name="cities">
+        <option value="dc">DC</option>
+        <option value="london">London</option>
+        <option value="boston">Boston</option>
+        <option value="sfbay">SF/Bay Area</option>
+        <option value="toronto">Toronto</option>
+        <option value="newyorkcity">New York City</option>
+        <option value="baltimore">Baltimore</option>
+      </select>
+    }
+
 
     return (
       <div className="login-form-container">
@@ -46,13 +71,7 @@ class SessionForm extends React.Component {
           <br/>
           {this.renderErrors()}
           <div className="login-form">
-            <label>
-              <input type="text"
-                value={this.state.fname   }
-                onChange={this.update('fname')}
-                className="login-input"
-              />
-            </label>
+            {fname}
             <br/>
 
             <label>
@@ -75,15 +94,7 @@ class SessionForm extends React.Component {
 
             <br/>
 
-              <select name="cities">
-                <option value="dc">DC</option>
-                <option value="london">London</option>
-                <option value="boston">Boston</option>
-                <option value="sfbay">SF/Bay Area</option>
-                <option value="toronto">Toronto</option>
-                <option value="newyorkcity">New York City</option>
-                <option value="baltimore">Baltimore</option>
-              </select>
+              {homeCity}
 
               <br/>
 

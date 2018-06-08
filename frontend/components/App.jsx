@@ -6,35 +6,22 @@ import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashContainer from './splash/splash_container'
+import NavBarContainer from './nav_bar/nav_bar_container'
 
 const App = () => {
-
   return (
-
     <div>
-      <header>
-        <h1> 🏋🏾‍ Pre With Strangers</h1>
-        &nbsp;
-        Pre-Times
-        &nbsp;
-        Hosting
-        &nbsp;
-        About
-        &nbsp;
-        <Link to="/login">Sign In</Link>
-        &nbsp;
-        <Link to="/signup">Sign Up</Link>
-        &nbsp;
-        <GreetingContainer />
-      </header>
+      <NavBarContainer />
+
 
       <Switch>
 
         <AuthRoute path="/signup" component={SignUpFormContainer} />
         <AuthRoute path="/login" component={LogInFormContainer} />
+        // <ProtectedRoute path="/signout" component={LogInFormContainer} />
+        <Route path='/#' />
 
-
-      </Switch>
+    </Switch>
 
 
     </div>

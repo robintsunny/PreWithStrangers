@@ -14,15 +14,20 @@
  *= require_self
  */
 
-.login-form-container {
-  max-width: 1020px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 1em;
-
+.nav-bar {
+  background-color: #F7BF4D;
+  display: flex;
+  justify-content: space-between;
 }
 
-.login-form-box {
-  padding-top: 3em;
-  padding-bottom: 3em;
+.nav-icon {
+  align-items: flex-start;
+  color: white;
+}
+
+.nav-links {
+  align-items: flex-end;
+  padding-bottom: 25px;
+  display: flex;
+  color: white;
 }
