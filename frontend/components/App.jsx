@@ -12,12 +12,12 @@ const App = () => {
   return (
     <div>
       <NavBarContainer />
-      <SplashContainer />
 
       <Switch>
 
         <AuthRoute path="/signup" component={SignUpFormContainer} />
         <AuthRoute path="/login" component={LogInFormContainer} />
+        <Route exact path="/" component={SplashContainer} />
         // <ProtectedRoute path="/signout" component={LogInFormContainer} />
         <Route path='/#' />
 

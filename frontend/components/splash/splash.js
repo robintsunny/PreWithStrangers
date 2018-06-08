@@ -2,7 +2,7 @@ import React from 'react';
 
 const Splash = () => {
   return (
-    <div>yo yo yo lift that</div>
+    <div class="splash">It's Dangerous To Lift Alone</div>
   )
 }
 

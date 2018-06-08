@@ -148,3 +148,15 @@ select {
   margin-bottom: 100px;
 
 }
+
+.splash {
+
+  background-image: url(http://beyondwords.life/wp-content/uploads/2017/10/lifting-weights-1140x700.jpg);
+  background-repeat: no-repeat;
+  height: 1000px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

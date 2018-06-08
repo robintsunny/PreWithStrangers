@@ -66,7 +66,7 @@ class SessionForm extends React.Component {
       </select>
 
       passwordPlaceholder = 'Password (at least 8 characters)';
-      welcomeMessage = "Join PreworkoutWithStrangers!"
+      welcomeMessage = "Join PreWithStrangers!"
     }
 
 
