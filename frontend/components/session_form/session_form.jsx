@@ -49,6 +49,7 @@ class SessionForm extends React.Component {
     let homeCity;
     let passwordPlaceholder = 'Password';
     let welcomeMessage = "Hey, stranger!"
+    let welcomeMessageTag = "It's good to have you back. Sign in here and sign up for your next pre time!"
 
     if (this.props.formType === 'SIGN UP') {
       fname =
@@ -73,7 +74,8 @@ class SessionForm extends React.Component {
       </select>
 
       passwordPlaceholder = 'Password (at least 8 characters)';
-      welcomeMessage = "Join PreWithStrangers!"
+      welcomeMessage = "Join PreWithStrangers!";
+      welcomeMessageTag = '1000s of strangers across the world have lifted together for more gainz. Create an account and you\'ll be on your way to join the community.'
     }
 
 
@@ -83,6 +85,9 @@ class SessionForm extends React.Component {
           <span className="welcome-message">
             {welcomeMessage}
           </span>
+          <p className="welcome-message-tag">
+            {welcomeMessageTag}
+          </p>
 
           <br/>
           {this.renderErrors()}

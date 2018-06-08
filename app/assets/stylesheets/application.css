@@ -17,7 +17,6 @@
 
  * {
    font-family: 'Josefin Sans',serif;
-
  }
 
 .nav-bar {
@@ -139,11 +138,11 @@ select {
   background-color: #EF6236;
   color: white;
   border-radius: 10px;
-  font-size: 18px;
-  background-color: #EF6236;
-  color: white;
-  border-radius: 10px;
-  font-size: 18px
+  font-size: 24px;
+
+
+
+
 }
 
 .demo-submit {
@@ -161,19 +160,26 @@ select {
 .welcome-message {
   color: #EF6236;
   font-size: 36px;
-  margin-bottom: 100px;
-
+  font-weight: 700;
+  position: relative;
+  text-align: center;
 
 }
+
+
+.sub-splash{
+    display: flex;
+    align-items: center;
+}
+
 
 .splash-image {
 
   background-image: url(http://beyondwords.life/wp-content/uploads/2017/10/lifting-weights-1140x700.jpg);
   background-blend-mode: overlay;
-  background-repeat: no-repeat;
-  /* height: 500px; */
-  margin-bottom: 0px;
-  display: inline-block;
+align-items: center;
+  display: flex;
+  flex-direction: column;
   height: 500px;
   width: 100%;
   overflow: hidden;
@@ -190,9 +196,23 @@ select {
 }
 
 .splash-text {
-
   background-color: red;
   font-size: 28px;
   color: white;
+}
+
+.welcome-message-tag {
+  font-size: 20px;
+  text-align: left;
+  width: 60%;
+  justify-content: space-around;
+  margin-left: 20%
+}
+
+.splash-bar-text {
+  background-color: blue;
+  color: white;
+
+
 
 }

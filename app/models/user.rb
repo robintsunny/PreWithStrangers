@@ -20,11 +20,11 @@ class User < ApplicationRecord
   before_validation :ensure_session_token
   attr_reader :password
 
-  # belongs_to :hometown, {
-  #   primary_key: :id,
-  #   foreign_key: :hometown_id,
-  #   class_name: :City
-  # }
+  belongs_to :hometown, {
+    primary_key: :id,
+    foreign_key: :hometown_id,
+    class_name: :City
+  }
 
   #   has_many :hosted_events, {
   #   primary_key: :id,
