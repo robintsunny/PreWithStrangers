@@ -139,7 +139,23 @@ select {
   background-color: #EF6236;
   color: white;
   border-radius: 10px;
+  font-size: 18px;
+  background-color: #EF6236;
+  color: white;
+  border-radius: 10px;
   font-size: 18px
+}
+
+.demo-submit {
+  border-radius: 10px;
+  width: 60%;
+  padding: 15px 20px;
+  margin: 8px 0px;
+  box-sizing: border-box;
+  border: 1px solid grey;
+  background-color: #EF6236;
+  color: white;
+  font-size: 24px;
 }
 
 .welcome-message {
