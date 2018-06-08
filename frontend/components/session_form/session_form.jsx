@@ -5,9 +5,9 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      fname: 'First Name',
-      email: 'Email',
-      password: 'Password',
+      fname: '',
+      email: '',
+      password: '',
       home_city: 'DC'
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -40,14 +40,17 @@ class SessionForm extends React.Component {
   render() {
     let fname;
     let homeCity;
+    let passwordPlaceholder = 'Password';
+    let welcomeMessage = "Hey, stranger!"
 
-    if (this.props.formType === 'signup') {
+    if (this.props.formType === 'SIGN UP') {
       fname =
       <label>
         <input type="text"
           value={this.state.fname   }
           onChange={this.update('fname')}
           className="login-input"
+          placeholder="First Name"
         />
       </label>
 
@@ -61,13 +64,19 @@ class SessionForm extends React.Component {
         <option value="newyorkcity">New York City</option>
         <option value="baltimore">Baltimore</option>
       </select>
+
+      passwordPlaceholder = 'Password (at least 8 characters)';
+      welcomeMessage = "Join PreworkoutWithStrangers!"
     }
 
 
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Join PreworkoutWithStrangers!
+          <span className="welcome-message">
+            {welcomeMessage}
+          </span>
+
           <br/>
           {this.renderErrors()}
           <div className="login-form">
@@ -79,6 +88,7 @@ class SessionForm extends React.Component {
                 value={this.state.email   }
                 onChange={this.update('email')}
                 className="login-input"
+                placeholder="Email Address"
               />
             </label>
 
@@ -89,6 +99,7 @@ class SessionForm extends React.Component {
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
+                placeholder={passwordPlaceholder}
               />
             </label>
 

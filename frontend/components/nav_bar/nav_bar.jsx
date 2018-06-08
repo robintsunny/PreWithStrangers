@@ -5,20 +5,18 @@ import { Route, Redirect, Switch, Link, HashRouter, withRouter} from 'react-rout
 class NavBar extends React.Component {
   render() {
     let dummyLink =
-        <span>
-        <Link to="/about">About</Link>
-        &nbsp;
-        <Link to="/login">Sign in</Link>
-        &nbsp;
-        <Link to="/signup">Sign Up</Link>
+        <span className="main-Cspan">
+        <Link className="nav-linksC" to="/about">About</Link>
+        <Link className="nav-linksC" to="/login">Sign in</Link>
+        <Link className="nav-linksC" to="/signup">Sign Up</Link>
         </span>
 
     if (this.props.currentUser !== undefined) {
       dummyLink =
-      <span>
-        <Link to="/dashboard">Dashboard</Link>
+      <span className="main-Cspan">
+        <Link className="nav-linksC" to="/dashboard">DASHBOARD</Link>
         &nbsp;
-        <button onClick={this.props.logout}>Sign Out</button>
+        <button className="nav-linksC" onClick={this.props.logout}>Sign Out</button>
 
       </span>
     }
@@ -26,16 +24,17 @@ class NavBar extends React.Component {
 
     return (
       <div className="nav-bar">
+        <div></div>
         <Link to="/" className="nav-icon">🏋🏾‍ Pre With Strangers</Link>
+        <div className="rightlinks">
+        <span>
+          <Link className="nav-linksAlways" to="/pre_times">Pre-Times</Link>
+          <Link className="nav-linksAlways" to="/hosting">Hosting</Link>
 
-
-        <span className="nav-links">
-          Pre-Times
-          &nbsp;
-          Hosting
-          &nbsp;
-          {dummyLink}
         </span>
+        {dummyLink}
+        </div>
+        <div></div>
       </div>
     )
   }
