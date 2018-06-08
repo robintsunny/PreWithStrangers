@@ -147,16 +147,36 @@ select {
   font-size: 36px;
   margin-bottom: 100px;
 
+
 }
 
-.splash {
+.splash-image {
 
   background-image: url(http://beyondwords.life/wp-content/uploads/2017/10/lifting-weights-1140x700.jpg);
+  background-blend-mode: overlay;
   background-repeat: no-repeat;
-  height: 1000px;
+  /* height: 500px; */
+  margin-bottom: 0px;
+  display: inline-block;
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
 
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.splash-image {
+    background-color: rgba(240, 220, 200, 0.9);
+    z-index: 1;
+
+}
+
+.splash-text {
+
+  background-color: red;
+  font-size: 28px;
+  color: white;
+
 }
