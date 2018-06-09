@@ -11,9 +11,10 @@ class City < ApplicationRecord
 
  has_many :citizens, {
    primary_key: :id,
-   foreign_key: :hometown_id,
+   foreign_key: :home_city_id,
    class_name: :User
  }
+
 has_many :events, {
   primary_key: :id,
   foreign_key: :city_id,

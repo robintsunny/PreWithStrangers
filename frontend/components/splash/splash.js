@@ -9,7 +9,7 @@ const Splash = () => {
         <span className="splash-text-tag">but you only realize that at the bottom of a squat</span>
         <Link to="/signup" className="lets-get-pre">Let's Get Pre</Link>
 
-        <span c lassName="splash-bar">
+        <span className="splash-bar">
           <span className="splash-bar-text">Drink some Pre | </span>
           <span className="splash-bar-text">Get Hyped Up | </span>
           <span className="splash-bar-text">Lift Everything`</span>
