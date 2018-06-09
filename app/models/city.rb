@@ -14,6 +14,10 @@ class City < ApplicationRecord
    foreign_key: :hometown_id,
    class_name: :User
  }
-
+has_many :events, {
+  primary_key: :id,
+  foreign_key: :city_id,
+  class_name: :Event
+}
 
 end

@@ -26,12 +26,12 @@ class User < ApplicationRecord
     class_name: :City
   }
 
-  #   has_many :hosted_events, {
-  #   primary_key: :id,
-  #   foreign_key: :host_id,
-  #   class_name: :Event
-  # }
-  #
+    has_many :hosted_events, {
+    primary_key: :id,
+    foreign_key: :host_id,
+    class_name: :Event
+  }
+  
   # has_many :rsvps, {
   #     primary_key: :id,
   #     foreign_key: :user_id,
