@@ -1,5 +1,3 @@
-json.array! @cities, :id, :name
-
 json.events do
   @events.each do |event|
     json.set! event.id do

@@ -96,7 +96,9 @@ body {
   text-align: center;
 }
 
-
+.login-form-container {
+  margin-top: 20px;
+}
 
 .login-form {
 
@@ -167,19 +169,15 @@ select {
 }
 
 
-.sub-splash{
-    display: flex;
-    align-items: center;
-}
 
 
 .splash-image {
 
   background-image: url(http://beyondwords.life/wp-content/uploads/2017/10/lifting-weights-1140x700.jpg);
   background-blend-mode: overlay;
-align-items: center;
+  align-items: center;
   display: flex;
-  flex-direction: column;
+
   height: 500px;
   width: 100%;
   overflow: hidden;
@@ -188,17 +186,23 @@ align-items: center;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: rgba(240, 220, 200, 0.9);
+  z-index: 1;
 }
-.splash-image {
-    background-color: rgba(240, 220, 200, 0.9);
-    z-index: 1;
 
+.sub-splash{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%
 }
 
 .splash-text {
-  background-color: red;
-  font-size: 28px;
+
+  font-size: 36px;
+  font-weight: 900;
   color: white;
+
 }
 
 .welcome-message-tag {
