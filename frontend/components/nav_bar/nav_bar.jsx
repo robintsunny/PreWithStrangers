@@ -29,7 +29,7 @@ class NavBar extends React.Component {
         <div className="rightlinks">
         <span>
           <Link className="nav-linksAlways" to="/pre_times">Pre-Times</Link>
-          <Link className="nav-linksAlways" to="/hosting">Hosting</Link>
+          <Link className="nav-linksAlways" to="/hosting_event">Host Event</Link>
 
         </span>
         {dummyLink}

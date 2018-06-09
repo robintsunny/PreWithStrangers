@@ -1,3 +1,13 @@
-json.extract! @city, :id, :name
+json.set! :city do
+  json.set! @city.id do
+      json.extract! @city
+    end
+  end
+end
 
-json.citizens @city.citizens, :id
+json.set! :events do
+  json.set! @city.id do
+      json.extract! @city
+    end
+  end
+end
