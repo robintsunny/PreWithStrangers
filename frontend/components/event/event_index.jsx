@@ -16,7 +16,8 @@ class EventIndex extends React.Component {
       return <div>loading</div>;
     } else {
     return (
-      <div className="event-index">
+      <div >
+        <div className="pre-splash"></div>
           <Link className="create-event-button" to="/new_event">
             Create a Pre Time!
           </Link>

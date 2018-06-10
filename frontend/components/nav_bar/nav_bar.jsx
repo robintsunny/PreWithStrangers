@@ -3,6 +3,15 @@ import React from 'react';
 import { Route, Redirect, Switch, Link, HashRouter, withRouter} from 'react-router-dom';
 
 class NavBar extends React.Component {
+  constructor(props){
+    super(props)
+  }
+
+  handleLogout (e) {
+    e.preventDefault();
+    this.props.logout().then(() => this.props.history.push('/'))
+  }
+
   render() {
     let dummyLink =
         <span className="main-Cspan">
@@ -16,7 +25,7 @@ class NavBar extends React.Component {
       <span className="main-Cspan">
         <Link className="nav-linksC" to="/dashboard">DASHBOARD</Link>
         &nbsp;
-        <button className="nav-linksC" onClick={this.props.logout}>Sign Out</button>
+        <button className="nav-linksC" onClick={this.handleLogout.bind(this)}>Sign Out</button>
 
       </span>
     }

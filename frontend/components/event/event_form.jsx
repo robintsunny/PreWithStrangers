@@ -79,6 +79,8 @@ class EventForm extends React.Component {
             <option value="Miami">Miami</option>
             <option value="Toronto">Toronto</option>
           </select>
+
+          <input type="submit" value={this.props.formType} className="demo-submit" />
         </form>
       </div>
     );

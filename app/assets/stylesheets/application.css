@@ -16,9 +16,16 @@
  @import 'reset.scss';
  @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 
+
+
+:root {
+  --yel: #f7bf4d;
+  --ora: #ef6236
+}
+
+
 li {
     list-style-type: none;
-
 }
 
 * {
@@ -26,7 +33,7 @@ li {
 }
 
 .nav-bar {
-  background-color: #f7bf4d;
+  background-color: var(--yel);
   display: flex;
   justify-content: space-between;
   padding-bottom: 10px;
@@ -69,7 +76,7 @@ li {
 .nav-linksC:last-child {
   text-decoration: none;
   background: white;
-  color: #f7bf4d;
+  color: var(--yel);
   border-radius: 5px;
   padding: 15px 20px;
   /* border: 1px solid black; */
@@ -78,7 +85,7 @@ li {
 
 .nav-linksC:last-child:hover {
   text-decoration: none;
-  background: #f7bf4d;
+  background: var(--yel);
   color: white;
   box-shadow: inset 0px 0px 0px 2px white;
   border-radius: 5px;
@@ -131,7 +138,7 @@ select {
 }
 
 .session-submit {
-  background-color: #ef6236;
+  background-color: var(--ora);
   color: white;
   border-radius: 10px;
   font-size: 24px;
@@ -143,14 +150,14 @@ select {
   padding: 15px 20px;
   margin: 0px 20%;
   border: 1px solid grey;
-  background-color: #ef6236;
+  background-color: var(--ora);
   color: white;
   font-size: 24px;
 
 }
 
 .welcome-message {
-  color: #ef6236;
+  color: var(--ora);
   font-size: 36px;
   font-weight: 700;
   text-align: center;
@@ -205,9 +212,8 @@ select {
   border: 1px solid blue;
   margin: 10px auto;
   width: 80%;
-  /* margin-left: auto; */
-  /* margin-right: auto; */
-  height: 1000px
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* .grid {
@@ -219,14 +225,28 @@ select {
   justify-items: center;
   align-items: center;
 } */
+.pre-splash {
+  height: 1000px;
+  background-image: url(https://www.powerrackstrength.com/wp-content/uploads/2015/03/DSC_1603.jpg);
+  background-blend-mode: overlay;
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(240, 220, 200, 0.9);
+  z-index: 1;
+}
 
 .create-event-button {
   color: white;
-  background-color: #ef6236;
+  background-color: var(--ora);
   padding: 20px;
-  border: 1px solid #ef6236;
-  position: relative;
-  top: 30px;
+  border: 1px solid var(--ora);
+  position: absolute;
+  top: 80px;
   left: 10px;
   border-radius: 5px;
 }
