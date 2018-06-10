@@ -1,13 +1,17 @@
-import React from 'react';
-import { Provider } from 'react-redux';
-import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
-import GreetingContainer from './greeting/greeting_container';
-import SignUpFormContainer from './session_form/signup_form_container';
-import LogInFormContainer from './session_form/login_form_container';
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import SplashContainer from './splash/splash_container'
-import SplashBarContainer from './splash_bar/splash_bar_container'
-import NavBarContainer from './nav_bar/nav_bar_container'
+import React from "react";
+import { Provider } from "react-redux";
+import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
+import GreetingContainer from "./greeting/greeting_container";
+import SignUpFormContainer from "./session_form/signup_form_container";
+import LogInFormContainer from "./session_form/login_form_container";
+import { AuthRoute, ProtectedRoute } from "../util/route_util";
+import SplashContainer from "./splash/splash_container";
+import SplashBarContainer from "./splash_bar/splash_bar_container";
+import NavBarContainer from "./nav_bar/nav_bar_container";
+import CityIndexContainer from "./city/city_index_container";
+import EventIndexContainer from "./event/event_index_container";
+import EventShowContainer from "./event/event_show_container";
+import CreateEventContainer from "./event/create_event_form_container";
 
 const App = () => {
   return (
@@ -15,21 +19,19 @@ const App = () => {
       <NavBarContainer />
 
       <Switch>
-
         <AuthRoute path="/signup" component={SignUpFormContainer} />
         <AuthRoute path="/login" component={LogInFormContainer} />
         <Route exact path="/" component={SplashContainer} />
-
-
-        // <ProtectedRoute path="/signout" component={LogInFormContainer} />
-        // <Route path='/#' />
-
-    </Switch>
-
-
+        <Route exact path="/events" component={EventIndexContainer} />
+        <Route exact path="/events/:eventId" component={EventShowContainer} />
+        <ProtectedRoute
+          exact
+          path="/new_event"
+          component={CreateEventContainer}
+        />
+      </Switch>
     </div>
-  )
-
+  );
 };
 
 export default App;

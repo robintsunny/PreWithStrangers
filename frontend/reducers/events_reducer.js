@@ -8,9 +8,9 @@ import merge from 'lodash/merge';
 const eventsReducer = (state = {}, action) => {
   switch(action.type){
     case RECEIVE_EVENTS:
-      return merge({},state,action.events)
+      return merge({},state,action.payload.events)
     case RECEIVE_EVENT:
-      return merge({},state,{[action.event.id]: action.event})
+      return merge({},state,{[action.payload.event.id]: action.payload.event})
     case REMOVE_EVENT:
       const newState = merge({},state)
       delete newState[action.eventId]

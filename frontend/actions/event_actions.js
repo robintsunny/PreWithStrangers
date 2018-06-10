@@ -8,16 +8,16 @@ export const REMOVE_EVENT = "REMOVE_EVENT";
 
 export const fetchEvents = () => {
   return dispatch => {
-    return EventAPIUtil.fetchEvents().then(events => {
-      return dispatch({type: RECEIVE_EVENTS, events: events})
+    return EventAPIUtil.fetchEvents().then(payload => {
+      return dispatch({type: RECEIVE_EVENTS, payload: payload})
     })
   }
 }
 
 export const fetchEvent = (id) => {
   return dispatch => {
-    return EventAPIUtil.fetchEvent(id).then(event => {
-      return dispatch({type: RECEIVE_EVENT, event: event})
+    return EventAPIUtil.fetchEvent(id).then(payload => {
+      return dispatch({type: RECEIVE_EVENT, payload: payload})
     })
   }
 }

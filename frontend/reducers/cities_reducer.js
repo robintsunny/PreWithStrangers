@@ -1,16 +1,16 @@
-import {
-  RECEIVE_CITIES,
-  RECEIVE_CITY,
-} from '../actions/city_actions';
-import merge from 'lodash/merge';
+import { RECEIVE_EVENTS, RECEIVE_EVENT } from "../actions/event_actions";
+import merge from "lodash/merge";
 
 const citiesReducer = (state = {}, action) => {
-  switch(action.type){
-    case RECEIVE_CITIES:
-      return merge({},state,action.cities)
-    case RECEIVE_CITY:
-      return merge({},state,{[action.city.id]: action.city})
-    default: return state
+  switch (action.type) {
+    case RECEIVE_EVENTS:
+      return action.payload.cities;
+    case RECEIVE_EVENT:
+      return merge({}, state, {
+        [action.payload.city.id]: action.payload.city
+      });
+    default:
+      return state;
   }
 };
 

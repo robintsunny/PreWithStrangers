@@ -28,7 +28,7 @@ class NavBar extends React.Component {
         <Link to="/" className="nav-icon">🏋🏾‍ Pre With Strangers</Link>
         <div className="rightlinks">
         <span>
-          <Link className="nav-linksAlways" to="/pre_times">Pre-Times</Link>
+          <Link className="nav-linksAlways" to="/events">Pre-Times</Link>
           <Link className="nav-linksAlways" to="/hosting_event">Host Event</Link>
 
         </span>

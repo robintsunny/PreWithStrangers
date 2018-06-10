@@ -4,16 +4,20 @@ class Api::EventsController < ApplicationController
         @events = Event.all
         render :index
     end
-        
+
     def show
         @event = Event.find_by(params[:id])
         render :show
     end
 
-   
+
 
     def create
-        @event = Event.new(event_params)
+      all_params = user_params
+      all_params[:city_id] = City.find_by(name: all_params[:city]).id
+      all_params.delete(:city)
+
+        @event = Event.new(all_params)
 
         if @event.save
             render :show
@@ -24,7 +28,7 @@ class Api::EventsController < ApplicationController
 
     def update
         @event = current_user.events.find(params[:id])
-    
+
         if @event.update(event_params)
             render :show
         else
@@ -37,10 +41,14 @@ class Api::EventsController < ApplicationController
 
 
     def event_params
-        params.require(:event).permit(:name, :description, :date, :time, 
-        :address, :city_id, :host_id)
+        params.require(:event).permit(:name, :description, :date, :time,
+          :address, :city)
+
+        #   Originally
+        #   params.require(:event).permit(:name, :description, :date, :time,
+        #     :address, :city_id, :host_id)
     end
-    
+
 
 
 
