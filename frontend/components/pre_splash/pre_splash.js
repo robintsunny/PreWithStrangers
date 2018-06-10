@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Splash = () => {
+const PreSplash = () => {
   return (
     <div className="splash-image">
       <div className="sub-splash">
         <span className="splash-text">Good Gym Buddies </span>
-        <span className="splash-text-tag">They're Hard To Find'</span>
+        <span className="splash-text-tag">They're Hard To Find</span>
 
 
       </div>
@@ -15,4 +15,4 @@ const Splash = () => {
   )
 }
 
-export default Splash;
+export default PreSplash;

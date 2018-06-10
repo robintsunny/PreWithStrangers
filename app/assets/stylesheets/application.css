@@ -19,21 +19,32 @@
 
 
 :root {
-  --yel: #f7bf4d;
-  --ora: #ef6236
+  /* mods */
+  /* --nav-bar-color: #0045b5;
+  --button-color: #7fff00;
+  --overlay: rgba(104, 162, 255, 0.9); */
+  --nav-bar-color: #f7bf4d;
+  --button-color: #ef6236;
+  --overlay: rgba(240, 220, 200, 0.9);
 }
 
-
-li {
-    list-style-type: none;
-}
 
 * {
   font-family: "Josefin Sans", serif;
 }
 
+li {
+    list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--nav-bar-color)
+}
+
+
 .nav-bar {
-  background-color: var(--yel);
+  background-color: var(--nav-bar-color);
   display: flex;
   justify-content: space-between;
   padding-bottom: 10px;
@@ -76,7 +87,7 @@ li {
 .nav-linksC:last-child {
   text-decoration: none;
   background: white;
-  color: var(--yel);
+  color: var(--nav-bar-color);
   border-radius: 5px;
   padding: 15px 20px;
   /* border: 1px solid black; */
@@ -85,7 +96,7 @@ li {
 
 .nav-linksC:last-child:hover {
   text-decoration: none;
-  background: var(--yel);
+  background: var(--nav-bar-color);
   color: white;
   box-shadow: inset 0px 0px 0px 2px white;
   border-radius: 5px;
@@ -138,7 +149,7 @@ select {
 }
 
 .session-submit {
-  background-color: var(--ora);
+  background-color: var(--button-color);
   color: white;
   border-radius: 10px;
   font-size: 24px;
@@ -150,14 +161,14 @@ select {
   padding: 15px 20px;
   margin: 0px 20%;
   border: 1px solid grey;
-  background-color: var(--ora);
+  background-color: var(--button-color);
   color: white;
   font-size: 24px;
 
 }
 
 .welcome-message {
-  color: var(--ora);
+  color: var(--button-color);
   font-size: 36px;
   font-weight: 700;
   text-align: center;
@@ -178,7 +189,7 @@ select {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: rgba(240, 220, 200, 0.9);
+  background-color: var(--overlay);
   z-index: 1;
 }
 
@@ -195,12 +206,30 @@ select {
   color: white;
 }
 
+.splash-text-tag {
+  font-size: 18px;
+}
+
 .welcome-message-tag {
   font-size: 20px;
+  color: white;
   text-align: left;
   width: 60%;
   justify-content: space-around;
   margin-left: 20%;
+}
+
+.lets-get-pre {
+  font-size: 18px;
+  margin: 10px 0;
+  color: white;
+  font-weight: 900;
+  width: 200px;
+  background-color: var(--button-color);
+  padding: 20px;
+  border: 1px solid var(--button-color);
+  text-align: center;
+  border-radius: 5px;
 }
 
 .splash-bar-text {
@@ -216,47 +245,119 @@ select {
   margin-right: auto;
 }
 
-/* .grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto;
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
-  justify-items: center;
+.pre-splash-image {
+  background-image: url(https://www.powerrackstrength.com/wp-content/uploads/2015/03/DSC_1603.jpg);
+  background-blend-mode: overlay;
   align-items: center;
-} */
+  display: flex;
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--overlay);
+  z-index: 1;
+}
+
+.pre-sub-splash {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.pre-splash-text {
+  font-size: 36px;
+  font-weight: 900;
+  color: white;
+}
+.pre-splash-text-tag {
+  font-size: 18px;
+}
+
 .pre-splash {
-  height: 1000px;
   background-image: url(https://www.powerrackstrength.com/wp-content/uploads/2015/03/DSC_1603.jpg);
   background-blend-mode: overlay;
   height: 500px;
   width: 100%;
   overflow: hidden;
-  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: rgba(240, 220, 200, 0.9);
+  background-color: var(--overlay);
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .create-event-button {
+  font-size: 18px;
+  margin-top: 10px;
   color: white;
-  background-color: var(--ora);
+  font-weight: 900;
+  width: 200px;
+  background-color: var(--button-color);
   padding: 20px;
-  border: 1px solid var(--ora);
-  position: absolute;
-  top: 80px;
-  left: 10px;
+  border: 1px solid var(--button-color);
+  text-align: center;
   border-radius: 5px;
 }
 
-.event-index-city-name {
-  padding: 75px 75px;
-  margin-top: 1em;
-  border: 1px solid #f5997d;
+
+.pre-message-bar {
+    width: 50%;
+    margin: 15px auto;
 }
 
-.event-index-city-events {
+.pre-message-bar-header {
+  font-size: 24px;
+  color: var(--button-color);
+  font-weight: 1000;
+  margin: 10px 0;
+}
+
+.pre-message-bar-content {
+  font-weight: 200;
+  font-size: 18px;
+}
+
+.city-bar {
+  width: 60%;
+  margin: 0 auto;
+  /* border: 1px black solid; */
+  background-color: PapayaWhip;
+  display: block;
+  justify-content: center;
+  text-align: center;
+  font-weight: 900;
+  border-radius: 10px;
+}
+.city-bar-message {
+  display: block;
+  align-content: center;
+  justify-content: center;
+  /* border: 1px solid red; */
+  padding-top: 10px;
+  font-size: 20px;
+  color: var(--nav-bar-color)
+}
+
+.city-bar-items {
+  /* border: 1px solid blue; */
   display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.city-bar-item {
+  margin: 15px;
+  background-color: white;
+  border: 1px solid var(--nav-bar-color);
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: var(--nav-bar-color);
 }

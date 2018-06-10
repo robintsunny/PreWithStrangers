@@ -17,15 +17,55 @@ class EventIndex extends React.Component {
     } else {
     return (
       <div >
-        <div className="pre-splash"></div>
+        <div className="pre-splash">
+
+      <div className="pre-sub-splash">
+          <span className="pre-splash-text">Good Training Partners</span>
+          <span className="pre-splash-text-tag">They're Hard To Come By</span>
+      </div>
+
           <Link className="create-event-button" to="/new_event">
             Create a Pre Time!
           </Link>
+        </div>
+
+        <div className="pre-message-bar">
+          <div className="pre-message-bar-header">
+            Pre With Strangers is pre, with strangers.
+          </div>
+
+          <div className="pre-message-bar-content">
+            For two hours, five-ish athletic strangers sit around to talk.
+            Not about anything in particular.
+            The circumstances are unusual, but that's the point.
+          </div>
+        </div>
+
+
+        <div className="city-bar">
+          <span className="city-bar-message">Jump To Your City's Pre Times</span>
+
+        <div className="city-bar-items">
+          {this.props.cities.map((city) => {
+            return (
+              <div className="city-bar-item">
+                <a href={`#${city.name}`}>{city.name}</a>
+              </div>
+            )})}
+          </div>
+
+
+        </div>
+
+
 
           {this.props.cities.map(city => {
             return (
               <React.Fragment>
-                <span className="event-index-city-name">{city.name}</span>
+                <span className="city-name" id={`"${city.name}"`}>
+                  {city.name}
+                </span>
+
                 {city.event_ids.map(event_id => {
                   const event = this.props.events.find(
                     event => event.id === event_id
