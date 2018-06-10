@@ -6,9 +6,11 @@ import EventShow from './event_show';
 
 
 const msp = (state,ownProps) => {
+  console.log(state.entities.events);
   return {
-    event: state.events[ownProps.match.params.eventId]
-    
+    event: state.entities.events[ownProps.match.params.eventId],
+    currentUserId: state.session.id
+
   }
 }
 
@@ -19,4 +21,4 @@ const mdp = dispatch => {
   }
 }
 
-export default connect(msp,mdp)(EventShow)
+export default connect(msp,mdp)(EventShow);

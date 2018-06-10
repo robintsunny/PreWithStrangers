@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -14,13 +13,20 @@
  *= require_tree .
  *= require_self
  */
+ @import 'reset.scss';
+ @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 
- * {
-   font-family: 'Josefin Sans',serif;
- }
+li {
+    list-style-type: none;
+
+}
+
+* {
+  font-family: "Josefin Sans", serif;
+}
 
 .nav-bar {
-  background-color: #F7BF4D;
+  background-color: #f7bf4d;
   display: flex;
   justify-content: space-between;
   padding-bottom: 10px;
@@ -32,7 +38,7 @@
   /* align-items: flex-start; */
   color: white;
   font-size: 30px;
-  padding: 10px
+  padding: 10px;
 }
 
 .nav-linksAlways {
@@ -44,7 +50,6 @@
   text-transform: uppercase;
   font-size: 14px;
   /* border: 1px solid black; */
-
 }
 
 .nav-linksC {
@@ -58,14 +63,13 @@
   padding-left: 10px;
 }
 .nav-linksC:visited {
-    color: white;
+  color: white;
 }
-
 
 .nav-linksC:last-child {
   text-decoration: none;
   background: white;
-  color: #F7BF4D;
+  color: #f7bf4d;
   border-radius: 5px;
   padding: 15px 20px;
   /* border: 1px solid black; */
@@ -74,9 +78,9 @@
 
 .nav-linksC:last-child:hover {
   text-decoration: none;
-  background: #F7BF4D;
+  background: #f7bf4d;
   color: white;
-  box-shadow:inset 0px 0px 0px 2px white;
+  box-shadow: inset 0px 0px 0px 2px white;
   border-radius: 5px;
   padding: 15px 20px;
   transition: 0.4s;
@@ -92,34 +96,25 @@
   justify-content: center;
 }
 
-body {
-  text-align: center;
-}
-
 .login-form-container {
   margin-top: 20px;
 }
 
 .login-form {
-
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 60%;
-
 }
 
-
-
-
 input {
-    width: 100%;
-    padding: 15px 20px;
-    margin: 8px 0px;
-    box-sizing: border-box;
-    border: 1px solid grey;
-    border-radius: 4px;
-    font-size: 24px;
+  width: 100%;
+  padding: 15px 20px;
+  margin: 8px 0px;
+  box-sizing: border-box;
+  border: 1px solid grey;
+  border-radius: 4px;
+  font-size: 24px;
 }
 
 select {
@@ -131,48 +126,38 @@ select {
   border-radius: 4px;
   font-size: 24px;
   box-sizing: border-box;
-  vertical-align:top;
-  height:55px;
-
+  vertical-align: top;
+  height: 55px;
 }
 
 .session-submit {
-  background-color: #EF6236;
+  background-color: #ef6236;
   color: white;
   border-radius: 10px;
   font-size: 24px;
-
-
-
-
 }
 
 .demo-submit {
   border-radius: 10px;
   width: 60%;
   padding: 15px 20px;
-  margin: 8px 0px;
-  box-sizing: border-box;
+  margin: 0px 20%;
   border: 1px solid grey;
-  background-color: #EF6236;
+  background-color: #ef6236;
   color: white;
   font-size: 24px;
+
 }
 
 .welcome-message {
-  color: #EF6236;
+  color: #ef6236;
   font-size: 36px;
   font-weight: 700;
-  position: relative;
   text-align: center;
 
 }
 
-
-
-
 .splash-image {
-
   background-image: url(http://beyondwords.life/wp-content/uploads/2017/10/lifting-weights-1140x700.jpg);
   background-blend-mode: overlay;
   align-items: center;
@@ -190,19 +175,17 @@ select {
   z-index: 1;
 }
 
-.sub-splash{
+.sub-splash {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%
+  width: 100%;
 }
 
 .splash-text {
-
   font-size: 36px;
   font-weight: 900;
   color: white;
-
 }
 
 .welcome-message-tag {
@@ -210,13 +193,50 @@ select {
   text-align: left;
   width: 60%;
   justify-content: space-around;
-  margin-left: 20%
+  margin-left: 20%;
 }
 
 .splash-bar-text {
   background-color: blue;
   color: white;
+}
 
+.event-index {
+  border: 1px solid blue;
+  margin: 10px auto;
+  width: 80%;
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  height: 1000px
+}
 
+/* .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  justify-items: center;
+  align-items: center;
+} */
 
+.create-event-button {
+  color: white;
+  background-color: #ef6236;
+  padding: 20px;
+  border: 1px solid #ef6236;
+  position: relative;
+  top: 30px;
+  left: 10px;
+  border-radius: 5px;
+}
+
+.event-index-city-name {
+  padding: 75px 75px;
+  margin-top: 1em;
+  border: 1px solid #f5997d;
+}
+
+.event-index-city-events {
+  display: flex;
 }

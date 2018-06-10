@@ -12,7 +12,7 @@ const Splash = () => {
         <span className="splash-bar">
           <span className="splash-bar-text">Drink some Pre | </span>
           <span className="splash-bar-text">Get Hyped Up | </span>
-          <span className="splash-bar-text">Lift Everything`</span>
+          <span className="splash-bar-text">Lift Everything</span>
         </span>
       </div>
     </div>

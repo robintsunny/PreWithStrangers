@@ -9,6 +9,7 @@ class EditEventForm extends React.Component {
   componentDidMount () {
     fetchEvent(this.props.match.params.eventId)
   }
+
   render () {
     const { event, formType, submitEvent } = this.props;
     return (
@@ -23,7 +24,7 @@ class EditEventForm extends React.Component {
 
 const msp = (state,ownProps) => {
   return {
-    event: state.events[ownProps.match.params.eventId],
+    event: state.entities.events[ownProps.match.params.eventId],
     formType: 'Update'
   }
 }

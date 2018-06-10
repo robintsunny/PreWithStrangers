@@ -1,6 +1,6 @@
 json.set! :city do
   json.set! @city.id do
-      json.extract! @city
+      json.extract! @city, :id
     end
   end
 end

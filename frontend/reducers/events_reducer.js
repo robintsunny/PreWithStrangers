@@ -10,6 +10,7 @@ const eventsReducer = (state = {}, action) => {
     case RECEIVE_EVENTS:
       return merge({},state,action.payload.events)
     case RECEIVE_EVENT:
+    console.log(action);
       return merge({},state,{[action.payload.event.id]: action.payload.event})
     case REMOVE_EVENT:
       const newState = merge({},state)

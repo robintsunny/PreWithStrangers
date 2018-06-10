@@ -5,56 +5,47 @@ import { Link } from "react-router-dom";
 class EventIndex extends React.Component {
   constructor(props) {
     super(props);
-    // this.renderEvents = this.renderEvents.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchEvents();
   }
 
-  // renderEvents () {
-  //   this.props.cities.map(city => {
-  //     return (<div>hi</div>);
-  //   })
-  //     return (
-  //       // <CityIndexItem city={city} key={city.id} />
-  //       <React.Fragment>
-  //       <div>City name:{city.name}</div>
-  //       {city.event_ids.forEach(event_id => {
-  //         const event = this.props.events.find(event => event.id = event_id);
-  //         console.log(event);
-  //         return <div>Event name:{event.name}</div>;
-  //       }, this)
-  //     }
-  //   </React.Fragment>
-  //   )
-  // },this)
-  // }
-
   render() {
+    if (!this.props.cities) {
+      return <div>loading</div>;
+    } else {
     return (
-      <div>
-        <ul>
-          hello
+      <div className="event-index">
+          <Link className="create-event-button" to="/new_event">
+            Create a Pre Time!
+          </Link>
+
           {this.props.cities.map(city => {
             return (
               <React.Fragment>
-                <Link to="/new_event">Create a Pre Time!</Link>
-                <div>City name:{city.name}</div>
+                <span className="event-index-city-name">{city.name}</span>
                 {city.event_ids.map(event_id => {
                   const event = this.props.events.find(
-                    event => (event.id = event_id)
+                    event => event.id === event_id
                   );
-                  console.log(event);
-                  return <div>Event name:{event.name}</div>;
+                  return (
+                    <span className="event-index-city-events">
+                      <Link to={`/events/${event_id}`}>{event.name}</Link>
+
+                      {event.date}
+                      {event.time}
+                    </span>
+                  );
                 }, this)}
               </React.Fragment>
             );
           }, this)}
-        </ul>
+
       </div>
     );
   }
+}
 }
 
 export default EventIndex;

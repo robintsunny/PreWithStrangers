@@ -64,7 +64,7 @@ class EventForm extends React.Component {
 
           <select name="cities">
             <option value="" disabled selected>
-              Select Your Home City
+              What City Are You Getting Pre In?
             </option>
             <option value="San Francisco / Bay Area">
               San Francisco / Bay Area
