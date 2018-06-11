@@ -39,7 +39,7 @@ class Api::EventsController < ApplicationController
     def destroy
       @event = current_user.hosted_events.find(params[:id])
       @event.destroy
-      render :index
+      render :show
     end
 
 

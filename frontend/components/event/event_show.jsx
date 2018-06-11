@@ -28,7 +28,7 @@ class EventShow extends React.Component {
             onClick={() =>
               this.props
                 .deleteEvent(this.props.match.params.eventId)
-                .then(() => this.props.history.push(`/`))
+                .then(() => this.props.history.push(`/events`))
             }
           >
             Delete
@@ -37,20 +37,21 @@ class EventShow extends React.Component {
       }
       return (
         <div className="event-show">
-          <div className="show-name">NAME: {this.props.event.name}</div>
-          <div className="show-address">
-            ADDRESS: {this.props.event.address}
-          </div>
-          <div className="show-date">DATE: {this.props.event.date}</div>
-          <div className="show-time">TIME: {this.props.event.time}</div>
-          <div className="show-description">
-            Description: {this.props.event.description}
+          <Link className="more-pre-link" to="/events">
+            More Pre Times
+          </Link>
+          <div className="event-show-details">
+            <div className="show-name">{this.props.event.name}</div>
+            <div className="show-address">📍 {this.props.event.address}</div>
+            <div className="show-date">📅 {this.props.event.date}</div>
+            <div className="show-time">⏰ {this.props.event.time}</div>
+            <div className="show-description">
+              DESCRIPTION: {this.props.event.description}
+            </div>
           </div>
 
           {editButton}
           {deleteButton}
-
-          <Link to="/events">More Pre Times</Link>
         </div>
       );
     }

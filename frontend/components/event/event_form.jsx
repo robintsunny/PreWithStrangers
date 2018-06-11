@@ -19,11 +19,12 @@ class EventForm extends React.Component {
         <h3 className="event-form-header">{this.props.formType} a Pre Time!</h3>
         <form
           className="event-form"
-          onSubmit={() =>
-            this.props
-              .submitEvent(this.state)
-              .then(() => this.props.history.push(`/events`))
-          }
+          onSubmit={e => {
+            e.preventDefault();
+            this.props.submitEvent(this.state).then(action => {
+              this.props.history.push(`/events/${action.payload.event.id}`);
+            });
+          }}
         >
           <label className="event-attr">
             Name

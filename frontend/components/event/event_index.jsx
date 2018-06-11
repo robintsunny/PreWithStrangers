@@ -61,24 +61,34 @@ class EventIndex extends React.Component {
           <div className="cities-events">
             {this.props.cities.map(city => {
               return (
-                <React.Fragment>
-                  <span className="city-name">{city.name}</span>
-                  {city.event_ids.map(event_id => {
-                    const event = this.props.events.find(
-                      event => event.id === event_id
-                    );
-                    return (
-                      <span className="city-events">
-                        <Link className="event-name" to={`/events/${event_id}`}>
-                          {event.name}
-                        </Link>
-                        <br />
-                        <span className="event-date">{event.date}</span>
-                        <br />
-                        <span className="event-time">{event.time}</span>
-                      </span>
-                    );
-                  }, this)}
+                <React.Fragment className="city-events">
+                  <div className="entire-city-div">
+                    <span className="city-name">{city.name}</span>
+
+                    {city.event_ids.map(event_id => {
+                      const event = this.props.events.find(
+                        event => event.id === event_id
+                      );
+
+                      // filter out past events here
+                      return (
+                        <span className="city-event">
+                          <Link
+                            className="event-name"
+                            to={`/events/${event_id}`}
+                          >
+                            {event.name}
+                          </Link>
+                          <br />
+                          <span className="event-date">{event.date}</span>
+                          <br />
+                          <span className="event-time">{event.time}</span>
+                          <br />
+                          <span className="event-join">JOIN!</span>
+                        </span>
+                      );
+                    }, this)}
+                  </div>
                 </React.Fragment>
               );
             }, this)}

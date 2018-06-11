@@ -16,6 +16,7 @@
 @import "reset.scss";
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 
+/* ---------CONSTANTS--------- */
 :root {
   /* mods */
   /* --nav-bar-color: #0045b5;
@@ -39,6 +40,7 @@ a {
   color: var(--nav-bar-color);
 }
 
+/* ---------NAV BAR--------- */
 .nav-bar {
   background-color: var(--nav-bar-color);
   display: flex;
@@ -49,7 +51,7 @@ a {
 
 .nav-icon {
   text-decoration: none;
-  /* align-items: flex-start; */
+
   color: white;
   font-size: 30px;
   padding: 10px;
@@ -63,7 +65,6 @@ a {
   padding-right: 10px;
   text-transform: uppercase;
   font-size: 14px;
-  /* border: 1px solid black; */
 }
 
 .nav-linksC {
@@ -72,7 +73,6 @@ a {
   font-weight: bold;
   text-decoration: none;
   text-transform: uppercase;
-  /* border: 1px solid black; */
   padding-right: 10px;
   padding-left: 10px;
 }
@@ -86,8 +86,6 @@ a {
   color: var(--nav-bar-color);
   border-radius: 5px;
   padding: 15px 20px;
-  /* border: 1px solid black; */
-  /* padding-left: 20px; */
 }
 
 .nav-linksC:last-child:hover {
@@ -98,8 +96,6 @@ a {
   border-radius: 5px;
   padding: 15px 20px;
   transition: 0.4s;
-  /* border: 1px solid black; */
-  /* padding-left: 20px; */
 }
 
 .rightlinks {
@@ -108,6 +104,14 @@ a {
 
   align-items: center;
   justify-content: center;
+}
+
+/* ---------LOGIN/SIGNUP FORM--------- */
+.welcome-message {
+  color: var(--button-color);
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
 }
 
 .login-form-container {
@@ -162,13 +166,7 @@ select {
   font-size: 24px;
 }
 
-.welcome-message {
-  color: var(--button-color);
-  font-size: 36px;
-  font-weight: 700;
-  text-align: center;
-}
-
+/* --------- /# SPLASH --------- */
 .sub-splash {
   background-image: url(http://beyondwords.life/wp-content/uploads/2017/10/lifting-weights-1140x700.jpg);
   display: flex;
@@ -221,7 +219,7 @@ select {
 
 .post-sub-bar {
   background-color: blanchedalmond;
-  padding: 20px 0;
+  padding: 30px 0;
   margin: auto;
 }
 .post-sub {
@@ -244,6 +242,7 @@ select {
   text-align: center;
 }
 
+/* --------- EVENT INDEX --------- */
 .event-index {
   border: 1px solid blue;
   margin: 10px auto;
@@ -336,7 +335,6 @@ select {
 .city-bar {
   width: 60%;
   margin: 0 auto;
-  /* border: 1px black solid; */
   background-color: PapayaWhip;
   display: block;
   justify-content: center;
@@ -349,14 +347,12 @@ select {
   display: block;
   align-content: center;
   justify-content: center;
-  /* border: 1px solid red; */
   padding-top: 10px;
   font-size: 20px;
   color: var(--nav-bar-color);
 }
 
 .city-bar-items {
-  /* border: 1px solid blue; */
   display: flex;
   justify-content: center;
   text-align: center;
@@ -374,27 +370,68 @@ select {
   color: var(--nav-bar-color);
 }
 
+.entire-city-div {
+  display: flex;
+  flex-wrap: wrap;
+  /* width: 772.8px; */
+}
 .cities-events {
-  border: 1px solid black;
-  width: 75%;
+  /* border: 1px solid black; */
+  width: 60%;
   margin: 10px auto;
-  display: block;
 }
 
 .city-name {
-  border: 1px solid purple;
-  display: inline-table;
+  border: 2px solid var(--button-color);
+  height: 200px;
+  width: 200px;
   margin: 10px;
+  min-width: 200px;
 
-  padding: 50px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  font-size: 28px;
+  color: var(--button-color);
+  font-weight: 1000;
 }
 
-.city-events {
+.city-event {
   margin: 10px;
-  border: 1px solid green;
-  display: inline-block;
+  border: 1px solid grey;
+  height: 200px;
+  width: 200px;
+  min-width: 200px;
+
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
 }
 
+.event-name {
+  margin-top: 10px;
+  font-size: 24px;
+}
+
+.event-join {
+  margin: 30px auto;
+  padding: 10px;
+  width: 50px;
+
+  font-size: 14px;
+  color: white;
+  font-weight: 900;
+  background-color: var(--button-color);
+
+  text-align: center;
+  border-radius: 5px;
+  align-items: center;
+}
+
+/* --------- EVENT FORM --------- */
 .overhead {
   margin: 15px auto;
   width: 65%;
@@ -408,6 +445,8 @@ select {
   text-align: center;
   font-size: 36px;
 }
+
+/* --------- EVENT SHOW --------- */
 .event-attr {
   font-size: 24px;
   padding: 5px 0;
@@ -417,6 +456,39 @@ select {
   width: 100%;
   height: 100px;
   font-size: 20px;
+}
+
+.event-show-details {
+  border: 1px solid grey;
+  width: 25%;
+  margin-left: 15%;
+  font-size: 24px;
+  padding-left: 10px;
+}
+
+.show-name {
+  border-bottom: 1px solid red;
+  padding: 5px;
+  font-size: 28px;
+  margin: 10px;
+  color: var(--button-color);
+  font-weight: 1000;
+}
+
+.more-pre-link {
+  display: flex;
+  position: relative;
+  left: 75%;
+  margin-top: 10px;
+  width: 100px;
+  justify-content: flex-end;
+  font-size: 14px;
+  color: white;
+  font-weight: 900;
+  background-color: var(--button-color);
+  padding: 10px;
+  border: 1px solid var(--button-color);
+  border-radius: 5px;
 }
 
 .edit-event-button {
@@ -440,7 +512,7 @@ select {
   color: red;
   font-weight: 900;
   width: 200px;
-  background-color: white;
+  background-color: none;
   padding: 20px;
   border: 1px solid red;
   text-align: center;
