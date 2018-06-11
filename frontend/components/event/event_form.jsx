@@ -15,10 +15,13 @@ class EventForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <h3>{this.props.formType}</h3>
-        <form onSubmit={() => this.props.submitEvent(this.state)}>
-          <label>
+      <div className="overhead">
+        <h3 className="event-form-header">{this.props.formType} a Pre Time!</h3>
+        <form
+          className="event-form"
+          onSubmit={() => this.props.submitEvent(this.state)}
+        >
+          <label className="event-attr">
             Name
             <input
               type="text"
@@ -27,15 +30,7 @@ class EventForm extends React.Component {
             />
           </label>
 
-          <label>
-            Description
-            <textarea
-              value={this.state.description}
-              onChange={this.update("description")}
-            />
-          </label>
-
-          <label>
+          <label className="event-attr">
             Date
             <input
               type="date"
@@ -44,7 +39,7 @@ class EventForm extends React.Component {
             />
           </label>
 
-          <label>
+          <label className="event-attr">
             Time
             <input
               type="time"
@@ -53,7 +48,7 @@ class EventForm extends React.Component {
             />
           </label>
 
-          <label>
+          <label className="event-attr">
             Address
             <input
               type="text"
@@ -80,7 +75,21 @@ class EventForm extends React.Component {
             <option value="Toronto">Toronto</option>
           </select>
 
-          <input type="submit" value={this.props.formType} className="demo-submit" />
+          <label className="event-attr">
+            Description
+            <br />
+            <textarea
+              className="event-description"
+              value={this.state.description}
+              onChange={this.update("description")}
+            />
+          </label>
+
+          <input
+            type="submit"
+            value={this.props.formType}
+            className="demo-submit"
+          />
         </form>
       </div>
     );
