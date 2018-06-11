@@ -13,10 +13,8 @@
  *= require_tree .
  *= require_self
  */
- @import 'reset.scss';
- @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
-
-
+@import "reset.scss";
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 
 :root {
   /* mods */
@@ -28,20 +26,18 @@
   --overlay: rgba(240, 220, 200, 0.9);
 }
 
-
 * {
   font-family: "Josefin Sans", serif;
 }
 
 li {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 a {
   text-decoration: none;
-  color: var(--nav-bar-color)
+  color: var(--nav-bar-color);
 }
-
 
 .nav-bar {
   background-color: var(--nav-bar-color);
@@ -164,7 +160,6 @@ select {
   background-color: var(--button-color);
   color: white;
   font-size: 24px;
-
 }
 
 .welcome-message {
@@ -172,7 +167,6 @@ select {
   font-size: 36px;
   font-weight: 700;
   text-align: center;
-
 }
 
 .splash-image {
@@ -306,10 +300,9 @@ select {
   border-radius: 5px;
 }
 
-
 .pre-message-bar {
-    width: 50%;
-    margin: 15px auto;
+  width: 50%;
+  margin: 15px auto;
 }
 
 .pre-message-bar-header {
@@ -342,7 +335,7 @@ select {
   /* border: 1px solid red; */
   padding-top: 10px;
   font-size: 20px;
-  color: var(--nav-bar-color)
+  color: var(--nav-bar-color);
 }
 
 .city-bar-items {
@@ -360,4 +353,25 @@ select {
   border-radius: 5px;
   text-decoration: none;
   color: var(--nav-bar-color);
+}
+
+.cities-events {
+  border: 1px solid black;
+  width: 75%;
+  margin: 10px auto;
+  display: block;
+}
+
+.city-name {
+  border: 1px solid purple;
+  display: inline-table;
+  margin: 10px;
+
+  padding: 50px;
+}
+
+.city-events {
+  margin: 10px;
+  border: 1px solid green;
+  display: inline-block;
 }
