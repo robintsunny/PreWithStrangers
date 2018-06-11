@@ -16,7 +16,7 @@ const mdp = dispatch => {
   return {
     fetchEvent: id => dispatch(fetchEvent(id)),
     fetchCity: id => dispatch(fetchCity(id)),
-    deleteEvent: () => dispatch(deleteEvent())
+    deleteEvent: id => dispatch(deleteEvent(id))
   };
 };
 

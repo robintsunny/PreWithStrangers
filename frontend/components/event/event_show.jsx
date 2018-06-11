@@ -15,14 +15,20 @@ class EventShow extends React.Component {
 
       if (this.props.event.host_id === this.props.currentUserId) {
         editButton = (
-          <Link to={`/events/${this.props.event.id}/edit`}>Edit</Link>
+          <Link
+            className="edit-event-button"
+            to={`/events/${this.props.event.id}/edit`}
+          >
+            Edit
+          </Link>
         );
         deleteButton = (
           <button
+            className="delete-event-button"
             onClick={() =>
-              this.deleteEvent
-                .bind(this)
-                .then(() => this.props.history.push(`/events`))
+              this.props
+                .deleteEvent(this.props.match.params.eventId)
+                .then(() => this.props.history.push(`/`))
             }
           >
             Delete
@@ -41,8 +47,8 @@ class EventShow extends React.Component {
             Description: {this.props.event.description}
           </div>
 
-          <div className="edit-event-button">{editButton}</div>
-          <div className="edit-event-button">{deleteButton}</div>
+          {editButton}
+          {deleteButton}
 
           <Link to="/events">More Pre Times</Link>
         </div>

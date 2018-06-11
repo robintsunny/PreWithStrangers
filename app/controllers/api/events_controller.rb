@@ -17,26 +17,29 @@ class Api::EventsController < ApplicationController
       all_params[:city_id] = City.find_by(name: all_params[:city]).id
       all_params.delete(:city)
 
-        @event = Event.new(all_params)
+      @event = Event.new(all_params)
 
-        if @event.save
-            render :show
-        else
-            render json: @event.errors.full_messages, status: 422
-        end
+      if @event.save
+        render :show
+      else
+        render json: @event.errors.full_messages, status: 422
+      end
     end
 
     def update
-        @event = current_user.events.find(params[:id])
+      @event = current_user.events.find(params[:id])
 
-        if @event.update(event_params)
-            render :show
-        else
-            render json: @event.errors.full_messages, status: 422
-        end
+      if @event.update(event_params)
+        render :show
+      else
+        render json: @event.errors.full_messages, status: 422
       end
+    end
 
-    def delete
+    def destroy
+      @event = current_user.hosted_events.find(params[:id])
+      @event.destroy
+      render :index
     end
 
 

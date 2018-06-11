@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Splash = () => {
   return (
-    <div className="splash-image">
+    <div>
       <div className="sub-splash">
         <span className="splash-text">It's Dangerous To Lift Alone</span>
         <span className="splash-text-tag">
@@ -13,12 +13,20 @@ const Splash = () => {
         <Link to={"/events"} className="lets-get-pre">
           Let's Get Pre
         </Link>
+      </div>
 
-        <span className="splash-bar">
-          <span className="splash-bar-text">Drink some Pre | </span>
-          <span className="splash-bar-text">Get Hyped Up | </span>
-          <span className="splash-bar-text">Lift Everything</span>
-        </span>
+      <div className="post-sub-bar">
+        <div className="post-sub">
+          <div>Show up for pre time</div>
+          <div>Have a real conversation</div>
+          <div>See what happens</div>
+        </div>
+
+        <div className="post-sub-2">
+          <div>Meet up with a few others</div>
+          <div>Talk about muscles for 2 hours</div>
+          <div>Gainz...gainz will happen</div>
+        </div>
       </div>
     </div>
   );

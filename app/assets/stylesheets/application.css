@@ -169,29 +169,22 @@ select {
   text-align: center;
 }
 
-.splash-image {
+.sub-splash {
   background-image: url(http://beyondwords.life/wp-content/uploads/2017/10/lifting-weights-1140x700.jpg);
-  background-blend-mode: overlay;
-  align-items: center;
   display: flex;
-
-  height: 500px;
-  width: 100%;
-  overflow: hidden;
-
-  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-color: var(--overlay);
-  z-index: 1;
-}
 
-.sub-splash {
-  display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+  height: 500px;
+  overflow: hidden;
+  background-blend-mode: overlay;
+  align-items: center;
+  justify-content: center;
 }
 
 .splash-text {
@@ -226,9 +219,29 @@ select {
   border-radius: 5px;
 }
 
-.splash-bar-text {
-  background-color: blue;
-  color: white;
+.post-sub-bar {
+  background-color: blanchedalmond;
+  padding: 20px 0;
+  margin: auto;
+}
+.post-sub {
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  width: 65%;
+  justify-content: space-between;
+  font-size: 24px;
+  text-align: center;
+  color: var(--button-color);
+  font-weight: 1000;
+}
+.post-sub-2 {
+  display: flex;
+  margin: 0 auto;
+  width: 65%;
+  justify-content: space-between;
+  font-size: 18px;
+  text-align: center;
 }
 
 .event-index {
@@ -241,17 +254,20 @@ select {
 
 .pre-splash-image {
   background-image: url(https://www.powerrackstrength.com/wp-content/uploads/2015/03/DSC_1603.jpg);
-  background-blend-mode: overlay;
-  align-items: center;
   display: flex;
-  height: 500px;
-  width: 100%;
-  overflow: hidden;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-color: var(--overlay);
-  z-index: 1;
+
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  background-blend-mode: overlay;
+  align-items: center;
+  justify-content: center;
 }
 
 .pre-sub-splash {
@@ -302,7 +318,7 @@ select {
 
 .pre-message-bar {
   width: 50%;
-  margin: 15px auto;
+  margin: 30px auto;
 }
 
 .pre-message-bar-header {
@@ -327,6 +343,7 @@ select {
   text-align: center;
   font-weight: 900;
   border-radius: 10px;
+  height: auto;
 }
 .city-bar-message {
   display: block;
@@ -343,6 +360,8 @@ select {
   display: flex;
   justify-content: center;
   text-align: center;
+  overflow-wrap: break-word;
+  align-items: center;
 }
 
 .city-bar-item {
@@ -411,5 +430,21 @@ select {
   border: 1px solid var(--button-color);
   text-align: center;
   border-radius: 5px;
-  align-items: cent er;
+  align-items: center;
+  display: block;
+}
+
+.delete-event-button {
+  font-size: 18px;
+  margin: 10px auto;
+  color: red;
+  font-weight: 900;
+  width: 200px;
+  background-color: white;
+  padding: 20px;
+  border: 1px solid red;
+  text-align: center;
+  border-radius: 5px;
+  align-items: center;
+  display: block;
 }
