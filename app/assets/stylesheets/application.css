@@ -399,3 +399,17 @@ select {
   height: 100px;
   font-size: 20px;
 }
+
+.edit-event-button {
+  font-size: 18px;
+  margin: 10px auto;
+  color: white;
+  font-weight: 900;
+  width: 200px;
+  background-color: var(--button-color);
+  padding: 20px;
+  border: 1px solid var(--button-color);
+  text-align: center;
+  border-radius: 5px;
+  align-items: cent er;
+}

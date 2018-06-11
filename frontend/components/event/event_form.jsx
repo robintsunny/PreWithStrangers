@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 class EventForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = props.event;
+    this.state = this.props.event;
   }
 
   update(field) {
@@ -19,7 +19,11 @@ class EventForm extends React.Component {
         <h3 className="event-form-header">{this.props.formType} a Pre Time!</h3>
         <form
           className="event-form"
-          onSubmit={() => this.props.submitEvent(this.state)}
+          onSubmit={() =>
+            this.props
+              .submitEvent(this.state)
+              .then(() => this.props.history.push(`/events`))
+          }
         >
           <label className="event-attr">
             Name
@@ -57,7 +61,11 @@ class EventForm extends React.Component {
             />
           </label>
 
-          <select name="cities">
+          <select
+            name="cities"
+            value={this.state.city}
+            onChange={this.update("city")}
+          >
             <option value="" disabled selected>
               What City Are You Getting Pre In?
             </option>

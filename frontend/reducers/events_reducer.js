@@ -1,23 +1,25 @@
 import {
   RECEIVE_EVENTS,
   RECEIVE_EVENT,
-  REMOVE_EVENT,
-} from '../actions/event_actions';
-import merge from 'lodash/merge';
+  REMOVE_EVENT
+} from "../actions/event_actions";
+import merge from "lodash/merge";
 
 const eventsReducer = (state = {}, action) => {
-  switch(action.type){
+  switch (action.type) {
     case RECEIVE_EVENTS:
-      return merge({},state,action.payload.events)
+      return merge({}, state, action.payload.events);
     case RECEIVE_EVENT:
-    console.log(action);
-      return merge({},state,{[action.payload.event.id]: action.payload.event})
+      return merge({}, state, {
+        [action.payload.event.id]: action.payload.event
+      });
     case REMOVE_EVENT:
-      const newState = merge({},state)
-      delete newState[action.eventId]
-      return newState
+      const newState = merge({}, state);
+      delete newState[action.eventId];
+      return newState;
 
-    default: return state
+    default:
+      return state;
   }
 };
 

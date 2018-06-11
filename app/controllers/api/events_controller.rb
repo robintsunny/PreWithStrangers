@@ -13,7 +13,7 @@ class Api::EventsController < ApplicationController
 
 
     def create
-      all_params = user_params
+      all_params = event_params
       all_params[:city_id] = City.find_by(name: all_params[:city]).id
       all_params.delete(:city)
 
@@ -42,7 +42,7 @@ class Api::EventsController < ApplicationController
 
     def event_params
         params.require(:event).permit(:name, :description, :date, :time,
-          :address, :city)
+          :address, :city, :host_id)
 
         #   Originally
         #   params.require(:event).permit(:name, :description, :date, :time,
