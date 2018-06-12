@@ -17,6 +17,11 @@ class EventShow extends React.Component {
           <div>SIGN ME UP!</div>
         </div>
       );
+      let leaveButton = (
+        <div className="user-join">
+          <div>Leave Pre Time</div>
+        </div>
+      );
 
       if (this.props.event.host_id === this.props.currentUserId) {
         editButton = (
@@ -43,18 +48,33 @@ class EventShow extends React.Component {
       }
       return (
         <div className="event-show">
-          <div className="event-show-details">
-            <div className="show-name">{this.props.event.name}</div>
-            <div className="show-attr">📍 {this.props.event.address}</div>
-            <div className="show-attr">📅 {this.props.event.date}</div>
-            <div className="show-attr">⏰ {this.props.event.time}</div>
-            <div className="show-attr">📃 {this.props.event.description}</div>
-            {editButton}
-            {deleteButton}
-            {joinButton}
-            <Link className="more-pre-link" to="/events">
-              More Pre Times
-            </Link>
+          <div className="event-show-left">
+            <div className="event-show-details">
+              <div className="show-name">{this.props.event.name}</div>
+              <div className="show-attr">📍 {this.props.event.address}</div>
+              <div className="show-attr">📅 {this.props.event.date}</div>
+              <div className="show-attr">⏰ {this.props.event.time}</div>
+              <div className="show-attr">📃 {this.props.event.description}</div>
+              {editButton}
+              {deleteButton}
+              {joinButton}
+              {leaveButton}
+              <Link className="more-pre-link" to="/events">
+                More Pre Times
+              </Link>
+            </div>
+          </div>
+
+          <div className="event-show-right">
+            <div className="about-the-host">
+              About The Host: {this.props.event.host.fname}
+            </div>
+            <div className="host-bio">
+              Ser Gregor Clegane, known as the Mountain That Rides, or simply
+              the Mountain, is the older brother of Sandor Clegane and is a
+              vassal to Tywin Lannister. His size and strength make him a
+              fearsome warrior, and he has earned a reputation for brutality.
+            </div>
           </div>
         </div>
       );
