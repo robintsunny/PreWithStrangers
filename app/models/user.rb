@@ -19,6 +19,7 @@ class User < ApplicationRecord
   validates :password, length: {minimum: 6, allow_nil: true}
   before_validation :ensure_session_token
   attr_reader :password
+  # validates :joined_events, length: {maximum: 3}
 
   belongs_to :hometown, {
     primary_key: :id,
@@ -32,16 +33,20 @@ class User < ApplicationRecord
     class_name: :Event
   }
 
-  # has_many :rsvps, {
-  #     primary_key: :id,
-  #     foreign_key: :user_id,
-  #     class_name: :Event
-  # }
-  #
-  # has_many :joined_events, {
-  #   through: :rsvps,
-  #   source: :event
-  # }
+  has_many :rsvps, {
+      primary_key: :id,
+      foreign_key: :user_id,
+      class_name: :Rsvp
+  }
+
+  has_many :joined_events, {
+    through: :rsvps,
+    source: :event
+  }
+
+  # def joined_events_count
+  #   self.joined_events.count
+  # end
 
   def password=(password)
     @password = password
