@@ -12,6 +12,11 @@ class EventShow extends React.Component {
     } else {
       let editButton;
       let deleteButton;
+      let joinButton = (
+        <div className="user-join">
+          <div>SIGN ME UP!</div>
+        </div>
+      );
 
       if (this.props.event.host_id === this.props.currentUserId) {
         editButton = (
@@ -34,24 +39,23 @@ class EventShow extends React.Component {
             Delete
           </button>
         );
+        joinButton = null;
       }
       return (
         <div className="event-show">
-          <Link className="more-pre-link" to="/events">
-            More Pre Times
-          </Link>
           <div className="event-show-details">
             <div className="show-name">{this.props.event.name}</div>
-            <div className="show-address">📍 {this.props.event.address}</div>
-            <div className="show-date">📅 {this.props.event.date}</div>
-            <div className="show-time">⏰ {this.props.event.time}</div>
-            <div className="show-description">
-              DESCRIPTION: {this.props.event.description}
-            </div>
+            <div className="show-attr">📍 {this.props.event.address}</div>
+            <div className="show-attr">📅 {this.props.event.date}</div>
+            <div className="show-attr">⏰ {this.props.event.time}</div>
+            <div className="show-attr">📃 {this.props.event.description}</div>
+            {editButton}
+            {deleteButton}
+            {joinButton}
+            <Link className="more-pre-link" to="/events">
+              More Pre Times
+            </Link>
           </div>
-
-          {editButton}
-          {deleteButton}
         </div>
       );
     }

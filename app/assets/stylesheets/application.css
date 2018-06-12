@@ -39,7 +39,13 @@ a {
   text-decoration: none;
   color: var(--nav-bar-color);
 }
-
+/* ----------------------------------- */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
 /* ---------NAV BAR--------- */
 .nav-bar {
   background-color: var(--nav-bar-color);
@@ -105,7 +111,13 @@ a {
   align-items: center;
   justify-content: center;
 }
-
+/* ----------------------------------- */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
 /* ---------LOGIN/SIGNUP FORM--------- */
 .welcome-message {
   color: var(--button-color);
@@ -165,7 +177,13 @@ select {
   color: white;
   font-size: 24px;
 }
-
+/* ----------------------------------- */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
 /* --------- /# SPLASH --------- */
 .sub-splash {
   background-image: url(http://beyondwords.life/wp-content/uploads/2017/10/lifting-weights-1140x700.jpg);
@@ -226,7 +244,7 @@ select {
   display: flex;
   margin: 0 auto;
   margin-bottom: 5px;
-  width: 65%;
+  width: 60%;
   justify-content: space-between;
   font-size: 24px;
   text-align: center;
@@ -236,12 +254,18 @@ select {
 .post-sub-2 {
   display: flex;
   margin: 0 auto;
-  width: 65%;
+  width: 60%;
   justify-content: space-between;
   font-size: 18px;
   text-align: center;
 }
-
+/* ----------------------------------- */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
 /* --------- EVENT INDEX --------- */
 .event-index {
   border: 1px solid blue;
@@ -404,7 +428,7 @@ select {
   height: 200px;
   width: 200px;
   min-width: 200px;
-
+  position: relative;
   display: inline-flex;
   align-items: center;
   text-align: center;
@@ -417,7 +441,7 @@ select {
 }
 
 .event-join {
-  margin: 30px auto;
+  /* margin: 30px auto; */
   padding: 10px;
   width: 50px;
 
@@ -429,8 +453,16 @@ select {
   text-align: center;
   border-radius: 5px;
   align-items: center;
+  position: absolute;
+  bottom: 10px;
 }
-
+/* ----------------------------------- */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
 /* --------- EVENT FORM --------- */
 .overhead {
   margin: 15px auto;
@@ -446,7 +478,6 @@ select {
   font-size: 36px;
 }
 
-/* --------- EVENT SHOW --------- */
 .event-attr {
   font-size: 24px;
   padding: 5px 0;
@@ -457,26 +488,40 @@ select {
   height: 100px;
   font-size: 20px;
 }
-
+/* ----------------------------------- */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/* --------- EVENT SHOW --------- */
 .event-show-details {
+  float: left
   border: 1px solid grey;
-  width: 25%;
-  margin-left: 15%;
+  width: 15%;
+  margin-left: 22.5%;
   font-size: 24px;
-  padding-left: 10px;
+  padding: 0 20px;
+  padding-bottom: 10px;
 }
 
 .show-name {
   border-bottom: 1px solid red;
-  padding: 5px;
+  padding-bottom: 5px;
   font-size: 28px;
-  margin: 10px;
+  margin: 10px 0;
   color: var(--button-color);
   font-weight: 1000;
 }
 
+.show-attr {
+  font-size: 18px;
+  margin-top: 15px;
+}
+
 .more-pre-link {
-  display: flex;
+  /* display: flex;
   position: relative;
   left: 75%;
   margin-top: 10px;
@@ -488,7 +533,19 @@ select {
   background-color: var(--button-color);
   padding: 10px;
   border: 1px solid var(--button-color);
+  border-radius: 5px; */
+  font-size: 18px;
+  margin: 10px auto;
+  color: white;
+  font-weight: 900;
+  width: 160px;
+  background-color: var(--button-color);
+  padding: 20px;
+  border: 1px solid var(--button-color);
+  text-align: center;
   border-radius: 5px;
+  align-items: center;
+  display: block;
 }
 
 .edit-event-button {
@@ -496,7 +553,7 @@ select {
   margin: 10px auto;
   color: white;
   font-weight: 900;
-  width: 200px;
+  width: 160px;
   background-color: var(--button-color);
   padding: 20px;
   border: 1px solid var(--button-color);
@@ -515,6 +572,21 @@ select {
   background-color: none;
   padding: 20px;
   border: 1px solid red;
+  text-align: center;
+  border-radius: 5px;
+  align-items: center;
+  display: block;
+}
+
+.user-join {
+  font-size: 18px;
+  margin: 50px auto 0 auto;
+  color: white;
+  font-weight: 900;
+  width: 160px;
+  background-color: var(--button-color);
+  padding: 20px;
+  border: 1px solid var(--button-color);
   text-align: center;
   border-radius: 5px;
   align-items: center;
