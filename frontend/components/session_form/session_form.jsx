@@ -65,7 +65,11 @@ class SessionForm extends React.Component {
       );
 
       homeCity = (
-        <select name="cities">
+        <select
+          name="cities"
+          value={this.state.home_city}
+          onChange={this.update("home_city")}
+        >
           <option value="" disabled selected>
             Select Your Home City
           </option>
@@ -78,6 +82,7 @@ class SessionForm extends React.Component {
           <option value="New York City">New York City</option>
           <option value="Boston">Boston</option>
           <option value="Baltimore">Baltimore</option>
+          <option value="DC">DC</option>
           <option value="DC">DC</option>
           <option value="Miami">Miami</option>
           <option value="Toronto">Toronto</option>
