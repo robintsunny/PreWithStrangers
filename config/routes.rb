@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :cities, only: [:index, :show]
     resources :events, only: [:index, :show, :create, :update, :destroy]
     resources :rsvps, only: [:create, :destroy]
-    get '/dashboard/events', to: 'events#user_events'
+    get '/dashboard', to: 'events#dashboard_events'
   end
 
   root "static_pages#root"

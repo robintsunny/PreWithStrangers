@@ -1,5 +1,7 @@
 import { RECEIVE_RSVP, REMOVE_RSVP } from "../actions/rsvp_actions";
 import { RECEIVE_EVENT } from "../actions/event_actions";
+import { LOGOUT_CURRENT_USER } from "../actions/session_actions";
+
 import merge from "lodash/merge";
 
 const rsvpsReducer = (state = {}, action) => {
@@ -15,6 +17,8 @@ const rsvpsReducer = (state = {}, action) => {
       const newState = merge({}, state);
       delete newState[action.rsvpId];
       return newState;
+    case LOGOUT_CURRENT_USER:
+      return {};
     default:
       return state;
   }

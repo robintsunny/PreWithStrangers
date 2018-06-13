@@ -12,7 +12,7 @@ class EventIndex extends React.Component {
   }
 
   render() {
-    if (!this.props.cities) {
+    if (!this.props.cities || !this.props.events) {
       return <div>loading</div>;
     } else {
       return (
@@ -36,9 +36,9 @@ class EventIndex extends React.Component {
             </div>
 
             <div className="pre-message-bar-content">
-              For two hours, five-ish athletic strangers sit around to talk. Not
-              about anything in particular. The circumstances are unusual, but
-              that's the point.
+              For two hours, six-ish iron addicts sit around to talk; maybe
+              about training or maybe about anything. The circumstances are
+              unusual, but that's the point.
             </div>
           </div>
 
@@ -72,7 +72,7 @@ class EventIndex extends React.Component {
 
                       // filter out past events here
                       return (
-                        <span className="city-event">
+                        <Link to={`/events/${event_id}`} className="city-event">
                           <Link
                             className="event-name"
                             to={`/events/${event_id}`}
@@ -84,8 +84,13 @@ class EventIndex extends React.Component {
                           <br />
                           <span className="event-time">{event.time}</span>
                           <br />
-                          <span className="event-join">JOIN!</span>
-                        </span>
+                          <Link
+                            to={`/events/${event_id}`}
+                            className="event-join"
+                          >
+                            More Info
+                          </Link>
+                        </Link>
                       );
                     }, this)}
                   </div>

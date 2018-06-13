@@ -1,4 +1,5 @@
 import merge from "lodash/merge";
+import { LOGOUT_CURRENT_USER } from "../actions/session_actions";
 
 import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 import { RECEIVE_EVENT } from "../actions/event_actions";
@@ -12,6 +13,8 @@ const usersReducer = (state = {}, action) => {
       return merge({}, state, {
         [action.payload.host.id]: action.payload.host
       });
+    case LOGOUT_CURRENT_USER:
+      return {};
     default:
       return state;
   }

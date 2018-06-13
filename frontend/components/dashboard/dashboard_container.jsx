@@ -1,21 +1,23 @@
 import { connect } from "react-redux";
-import { createRsvp, deleteRsvp } from "../../actions/rsvp_actions";
-import { fetchEvents } from "../../actions/event_actions";
+import { deleteRsvp } from "../../actions/rsvp_actions";
+import { fetchJoinedEvents } from "../../actions/dashboard_event_actions";
 import Dashboard from "./dashboard";
 
 const msp = state => {
-  return {};
+  return {
+    joinedEvents: Object.values(state.entities.events),
+    hostedEvents: "something"
+  };
 };
 
 const mdp = dispatch => {
   return {
-    fetchEvents: () => dispatch(fetchEvents()),
-    createRsvp: () => dispatch(createRsvp()),
-    deleteRsvp: () => dispatch(deleteRsvp())
+    fetchJoinedEvents: () => dispatch(fetchJoinedEvents()),
+    deleteRsvp: id => dispatch(deleteRsvp(id))
   };
 };
 
 export default connect(
-  null,
-  null
+  msp,
+  mdp
 )(Dashboard);

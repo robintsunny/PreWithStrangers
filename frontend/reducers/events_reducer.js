@@ -3,6 +3,8 @@ import {
   RECEIVE_EVENT,
   REMOVE_EVENT
 } from "../actions/event_actions";
+import { LOGOUT_CURRENT_USER } from "../actions/session_actions";
+
 import merge from "lodash/merge";
 
 const eventsReducer = (state = {}, action) => {
@@ -17,7 +19,8 @@ const eventsReducer = (state = {}, action) => {
       const newState = merge({}, state);
       delete newState[action.eventId];
       return newState;
-
+    case LOGOUT_CURRENT_USER:
+      return {};
     default:
       return state;
   }
