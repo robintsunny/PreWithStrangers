@@ -9,7 +9,7 @@ class Api::RsvpsController < ApplicationController
   end
 
   def destroy
-    @rsvp = current_user.joined_events.find(params[:id]))
+    @rsvp = current_user.rsvps.find(params[:id])
     @rsvp.destroy
     render :show
   end
@@ -17,5 +17,6 @@ class Api::RsvpsController < ApplicationController
   def rsvp_params
     params.require(:rsvp).permit(:user_id, :event_id)
   end
+
 
 end

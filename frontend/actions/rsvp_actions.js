@@ -13,8 +13,8 @@ export const createRsvp = rsvp => {
 
 export const deleteRsvp = id => {
   return dispatch => {
-    return RsvpAPIUtil.deleteRsvp(id).then(rsvp => {
-      return dispatch({ type: REMOVE_RSVP, rsvpId: rsvp.id });
+    return RsvpAPIUtil.deleteRsvp(id).then(payload => {
+      return dispatch({ type: REMOVE_RSVP, rsvpId: payload.rsvp.user_id });
     });
   };
 };

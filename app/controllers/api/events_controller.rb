@@ -52,6 +52,10 @@ class Api::EventsController < ApplicationController
         #     :address, :city_id, :host_id)
     end
 
+    def user_events
+      @events = current_user.joined_events
+      render :index
+    end
 
 
 

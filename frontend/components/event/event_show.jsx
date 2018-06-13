@@ -7,21 +7,34 @@ class EventShow extends React.Component {
   }
 
   render() {
-    if (!this.props.event) {
+    if (!this.props.event || !this.props.host || !this.props.rsvps) {
       return <div>loading</div>;
     } else {
       let editButton;
       let deleteButton;
       let joinButton = (
-        <div className="user-join">
-          <div>SIGN ME UP!</div>
-        </div>
+        <button
+          onClick={() =>
+            this.props.createRsvp({
+              event_id: this.props.match.params.eventId,
+              user_id: this.props.currentUserId
+            })
+          }
+          className="user-join"
+        >
+          SIGN ME UP!
+        </button>
       );
       let leaveButton = (
-        <div className="user-join">
-          <div>Leave Pre Time</div>
-        </div>
+        <button
+          onClick={() => this.props.deleteRsvp(this.props.currentUserRsvp.id)}
+          className="user-join"
+        >
+          Leave This Pre Time
+        </button>
       );
+
+      let actionButton = this.props.currentUserRsvp ? leaveButton : joinButton;
 
       if (this.props.event.host_id === this.props.currentUserId) {
         editButton = (
@@ -44,7 +57,7 @@ class EventShow extends React.Component {
             Delete
           </button>
         );
-        joinButton = null;
+        actionButton = null;
       }
       return (
         <div className="event-show">
@@ -57,8 +70,7 @@ class EventShow extends React.Component {
               <div className="show-attr">📃 {this.props.event.description}</div>
               {editButton}
               {deleteButton}
-              {joinButton}
-              {leaveButton}
+              {actionButton}
               <Link className="more-pre-link" to="/events">
                 More Pre Times
               </Link>
@@ -67,14 +79,9 @@ class EventShow extends React.Component {
 
           <div className="event-show-right">
             <div className="about-the-host">
-              About The Host: {this.props.event.host.fname}
+              About The Host: {this.props.host.fname}
             </div>
-            <div className="host-bio">
-              Ser Gregor Clegane, known as the Mountain That Rides, or simply
-              the Mountain, is the older brother of Sandor Clegane and is a
-              vassal to Tywin Lannister. His size and strength make him a
-              fearsome warrior, and he has earned a reputation for brutality.
-            </div>
+            <div className="host-bio">HOST PROFILE INFO</div>
           </div>
         </div>
       );

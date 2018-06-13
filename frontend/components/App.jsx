@@ -13,6 +13,7 @@ import EventIndexContainer from "./event/event_index_container";
 import EventShowContainer from "./event/event_show_container";
 import CreateEventContainer from "./event/create_event_form_container";
 import EditEventContainer from "./event/edit_event_form_container";
+import DashboardContainer from "./dashboard/dashboard_container";
 
 const App = () => {
   return (
@@ -25,8 +26,20 @@ const App = () => {
         <Route exact path="/" component={SplashContainer} />
         <Route exact path="/events" component={EventIndexContainer} />
         <Route exact path="/events/:eventId" component={EventShowContainer} />
-        <Route exact path="/events/:eventId/edit" component={EditEventContainer} />
-        <ProtectedRoute exact path="/new_event" component={CreateEventContainer}
+        <Route
+          exact
+          path="/events/:eventId/edit"
+          component={EditEventContainer}
+        />
+        <ProtectedRoute
+          exact
+          path="/new_event"
+          component={CreateEventContainer}
+        />
+        <ProtectedRoute
+          exact
+          path="/dashboard"
+          component={DashboardContainer}
         />
       </Switch>
     </div>
