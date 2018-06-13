@@ -6,9 +6,13 @@ import Dashboard from "./dashboard";
 
 const msp = state => {
   return {
-    events: Object.values(state.entities.events)
-    // joinedEvents: Object.values(state.entities.joined_events),
-    // hostedEvents: Object.values(state.entities.hosted_events),
+    // events: Object.values(state.entities.events)
+    joinedEvents: Object.values(state.entities.events).filter(
+      event => event.host_id !== state.session.id
+    ),
+    hostedEvents: Object.values(state.entities.events).filter(
+      event => event.host_id === state.session.id
+    )
     // rsvps: Object.values(state.entities.rsvps)
   };
 };

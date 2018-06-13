@@ -63,6 +63,7 @@ class EventIndex extends React.Component {
               return (
                 <React.Fragment className="city-events">
                   <div className="entire-city-div">
+                    <a name={`${city.name}`} />
                     <span className="city-name">{city.name}</span>
 
                     {city.event_ids.map(event_id => {

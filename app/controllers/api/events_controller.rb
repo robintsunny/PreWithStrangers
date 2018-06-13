@@ -49,10 +49,10 @@ class Api::EventsController < ApplicationController
     end
 
     def dashboard_events
-        @events = current_user.joined_events
-      #   @rsvps = current_user.rsvps
-      # @joined_events = current_user.joined_events
-      # @hosted_events = current_user.hosted_events
+        # @events = current_user.joined_events
+        @rsvps = current_user.rsvps
+      @joined_events = current_user.joined_events
+      @hosted_events = current_user.hosted_events
 
       render :index
 

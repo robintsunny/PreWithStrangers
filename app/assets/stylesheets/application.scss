@@ -62,7 +62,9 @@ a {
   font-size: 30px;
   padding: 10px;
 }
-
+.vsc-initialized {
+  background-color: #fff8dc;
+}
 .nav-linksAlways {
   color: white;
   text-decoration: none;
@@ -359,7 +361,7 @@ select {
 .city-bar {
   width: 60%;
   margin: 0 auto;
-  background-color: PapayaWhip;
+  background-color: #ffe0b3;
   display: block;
   justify-content: center;
   text-align: center;
@@ -408,6 +410,7 @@ select {
 
 .city-name {
   border: 2px solid var(--button-color);
+  background-color: #fccebf;
   height: 200px;
   width: 200px;
   margin: 10px;
@@ -425,10 +428,12 @@ select {
 
 .city-event {
   margin: 10px;
-  border: 1px solid grey;
+  border: 1px solid var(--button-color);
   height: 200px;
   width: 200px;
   min-width: 200px;
+  background-color: #ffe0b3;
+  color: var(--button-color);
   position: relative;
   display: inline-flex;
   align-items: center;

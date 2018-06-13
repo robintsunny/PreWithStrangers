@@ -4,10 +4,3 @@ export const fetchEvents = () => {
     url: `api/dashboard`
   });
 };
-
-// export const fetchDashboardEvents = () => {
-//   return $.ajax({
-//     method: "GET",
-//     url: `api/dashboard`
-//   });
-// };
