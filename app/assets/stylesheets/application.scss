@@ -366,6 +366,7 @@ select {
   font-weight: 900;
   border-radius: 10px;
   height: auto;
+  flex-wrap: wrap;
 }
 .city-bar-message {
   display: block;
@@ -380,7 +381,7 @@ select {
   display: flex;
   justify-content: center;
   text-align: center;
-  overflow-wrap: break-word;
+  flex-wrap: wrap;
   align-items: center;
 }
 
@@ -603,14 +604,14 @@ select {
 
 /* --------- DASHBOARD --------- */
 .rob {
-  border: 1px solid black;
+  border: 5px solid blue;
 }
 .event-details-name {
   align-items: center;
 }
 
 .signed-up-logo {
-  border-bottom: 5px solid black;
+  border-bottom: 3px solid black;
   color: var(--button-color);
   width: 55%;
   margin: 20px auto;
@@ -619,23 +620,21 @@ select {
 }
 
 .dashboard-wrapper {
-  border: 2px solid red;
-  width: 65%;
+  border: 5px solid red;
+  width: 55%;
   margin: 0 auto;
+  justify-content: space-between;
   flex-wrap: wrap;
+  text-align: center;
 }
+
 .event-details {
   align-items: center;
   font-size: 17px;
   margin: 5px;
 }
-.event-details-description {
-  align-items: center;
-  font-size: 15px;
-}
 
 .event-leave {
-  /* margin: 30px auto; */
   padding: 10px;
   width: 75px;
 

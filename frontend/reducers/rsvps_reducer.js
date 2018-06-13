@@ -13,6 +13,7 @@ const rsvpsReducer = (state = {}, action) => {
       return merge({}, state, {
         [action.payload.rsvp.user_id]: action.payload.rsvp
       });
+
     case REMOVE_RSVP:
       const newState = merge({}, state);
       delete newState[action.rsvpId];

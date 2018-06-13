@@ -46,17 +46,16 @@ class Api::EventsController < ApplicationController
     def event_params
         params.require(:event).permit(:name, :description, :date, :time,
           :address, :city, :host_id)
-
-        #   Originally
-        #   params.require(:event).permit(:name, :description, :date, :time,
-        #     :address, :city_id, :host_id)
     end
 
     def dashboard_events
-      @events = current_user.joined_events
+        @events = current_user.joined_events
+      #   @rsvps = current_user.rsvps
       # @joined_events = current_user.joined_events
       # @hosted_events = current_user.hosted_events
+
       render :index
+
     end
 
 
