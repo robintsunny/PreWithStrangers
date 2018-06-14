@@ -14,6 +14,7 @@ import EventShowContainer from "./event/event_show_container";
 import CreateEventContainer from "./event/create_event_form_container";
 import EditEventContainer from "./event/edit_event_form_container";
 import DashboardContainer from "./dashboard/dashboard_container";
+import FooterContainer from "./footer/footer_container";
 
 const App = () => {
   return (
@@ -42,6 +43,8 @@ const App = () => {
           component={DashboardContainer}
         />
       </Switch>
+
+      <FooterContainer />
     </div>
   );
 };

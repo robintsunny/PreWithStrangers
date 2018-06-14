@@ -21,6 +21,7 @@ class Dashboard extends React.Component {
     } else if (!this.props.joinedEvents && !this.props.hostedEvents) {
       return <div> NO EVENTS!</div>;
     } else {
+      let currUsrId = this.props.currentUserId;
       return (
         <div>
           <div className="rob">
@@ -39,7 +40,12 @@ class Dashboard extends React.Component {
                     <button
                       className="event-leave"
                       onClick={() => {
-                        this.props.deleteRsvp();
+                        console.log(this.props.rsvps);
+                        let id = this.props.rsvps.values.filter(
+                          t =>
+                            t.event_id === event.id && t.user_id === currUsrId
+                        );
+                        this.deleteRsvp(id);
                       }}
                     >
                       Leave Event
@@ -65,11 +71,6 @@ class Dashboard extends React.Component {
                     <button
                       className="event-leave"
                       onClick={() => {
-                        // console.log(this.state.hostedEvents, e);
-                        let newHosted = this.state.hostedEvents.filter(e => {
-                          return e !== event;
-                        });
-                        console.log(newHosted);
                         this.props
                           .deleteEvent(event.id)
                           .then(this.props.fetchEvents());

@@ -13,7 +13,8 @@ const msp = state => {
     hostedEvents: Object.values(state.entities.events).filter(
       event => event.host_id === state.session.id
     ),
-    rsvps: Object.values(state.entities.rsvps)
+    rsvps: Object.values(state.entities.rsvps),
+    currentUserId: state.session.id
   };
 };
 
