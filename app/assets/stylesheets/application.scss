@@ -513,9 +513,11 @@ select {
 /*  */
 /*  */
 /* --------- EVENT SHOW --------- */
-.event-show-left {
-  float: left;
+.event-show {
+  display: flex;
+}
 
+.event-show-left {
   margin-left: 20%;
   width: 20%;
 }
@@ -603,7 +605,6 @@ select {
 }
 
 .event-show-right {
-  float: right;
   /* border: 3px solid lavender; */
   margin-right: 20%;
   width: 37.5%;
@@ -616,6 +617,10 @@ select {
   text-align: center;
   font-size: 24px;
   padding: auto 20px;
+}
+
+.host-bio {
+  text-align: center;
 }
 
 /* --------- DASHBOARD --------- */

@@ -30,8 +30,8 @@ export const createEvent = event => {
 
 export const updateEvent = event => {
   return dispatch => {
-    return EventAPIUtil.updateEvent(event).then(event => {
-      return dispatch({ type: RECEIVE_EVENT, event: event });
+    return EventAPIUtil.updateEvent(event).then(payload => {
+      return dispatch({ type: RECEIVE_EVENT, payload: payload });
     });
   };
 };

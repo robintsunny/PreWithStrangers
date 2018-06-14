@@ -81,7 +81,7 @@ class EventShow extends React.Component {
             <div className="about-the-host">
               About The Host: {this.props.host.fname}
             </div>
-            <div className="host-bio">HOST PROFILE INFO</div>
+            <div className="host-bio">Host hasn't submitted a profile yet!</div>
           </div>
         </div>
       );
