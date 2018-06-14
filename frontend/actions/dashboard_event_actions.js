@@ -1,6 +1,5 @@
 import * as DashboardEventAPIUtil from "../util/dashboard_event_api_util";
 
-export const RECEIVE_EVENTS = "RECEIVE_EVENTS";
 export const DASHBOARD_EVENTS = "DASHBOARD_EVENTS";
 
 export const fetchEvents = () => {

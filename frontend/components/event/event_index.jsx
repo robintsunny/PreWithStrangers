@@ -5,15 +5,19 @@ import { Link } from "react-router-dom";
 class EventIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      loading: true
+    };
   }
 
   componentDidMount() {
-    this.props.fetchEvents();
+    this.props.fetchEvents().then(() => this.setState({ loading: false }));
   }
 
   render() {
-    if (!this.props.cities || !this.props.events) {
-      return <div>loading</div>;
+    debugger;
+    if (this.state.loading) {
+      return <div> LOADING</div>;
     } else {
       return (
         <div>

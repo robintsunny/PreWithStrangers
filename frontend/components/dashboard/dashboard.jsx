@@ -4,16 +4,19 @@ import { Link } from "react-router-dom";
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      loading: true
+    };
   }
 
   componentDidMount() {
-    this.props.fetchEvents();
-    // this.props.fetchDashboardEvents();
+    this.props.fetchEvents().then(() => this.setState({ loading: false }));
   }
 
   render() {
-    if (!this.props.joinedEvents && !this.props.hostedEvents) {
-      // if (!this.props.joinedEvents || !this.props.hostedEvents) {
+    if (this.state.loading) {
+      return <div> LOADING</div>;
+    } else if (!this.props.joinedEvents && !this.props.hostedEvents) {
       return <div> NO EVENTS!</div>;
     } else {
       return (

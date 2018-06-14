@@ -11,11 +11,10 @@ import merge from "lodash/merge";
 const eventsReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_EVENTS:
-      return merge({}, state, action.payload.events);
+      return merge({}, action.payload.events);
     case DASHBOARD_EVENTS:
-      return merge(
+      return Object.assign(
         {},
-        state,
         action.payload.joined_events,
         action.payload.hosted_events
       );
