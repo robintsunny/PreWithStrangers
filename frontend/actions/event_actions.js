@@ -39,7 +39,7 @@ export const updateEvent = event => {
 export const deleteEvent = id => {
   return dispatch => {
     return EventAPIUtil.deleteEvent(id).then(event => {
-      return dispatch({ type: REMOVE_EVENT, eventId: event.id });
+      return dispatch({ type: REMOVE_EVENT, eventId: id });
     });
   };
 };

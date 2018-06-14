@@ -216,9 +216,10 @@ select {
 }
 
 .welcome-message-tag {
+  padding-top: 15px;
   font-size: 20px;
-  color: white;
-  text-align: left;
+  color: var(--nav-bar-color);
+  text-align: center;
   width: 60%;
   justify-content: space-around;
   margin-left: 20%;

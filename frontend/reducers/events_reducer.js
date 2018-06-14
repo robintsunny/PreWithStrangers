@@ -24,6 +24,7 @@ const eventsReducer = (state = {}, action) => {
       });
     case REMOVE_EVENT:
       const newState = merge({}, state);
+
       delete newState[action.eventId];
       return newState;
     case LOGOUT_CURRENT_USER:

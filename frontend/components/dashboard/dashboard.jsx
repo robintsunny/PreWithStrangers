@@ -5,7 +5,9 @@ class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: true
+      loading: true,
+      hostedEvents: this.props.hostedEvents,
+      joinedEvents: this.props.joinedEvents
     };
   }
 
@@ -22,12 +24,9 @@ class Dashboard extends React.Component {
       return (
         <div>
           <div className="rob">
-            <div className="signed-up-logo">
-              Pre Times you're SIGNED UP for!
-            </div>
+            <div className="signed-up-logo">Pre Times you're ATTENDING!</div>
             <div className="dashboard-wrapper">
               {this.props.joinedEvents.map(event => {
-                // {this.props.joinedEvents.map(event => {
                 return (
                   <div className="city-event">
                     <Link to={`events/${event.id}`} className="event-name">
@@ -54,7 +53,6 @@ class Dashboard extends React.Component {
             </div>
             <div className="dashboard-wrapper">
               {this.props.hostedEvents.map(event => {
-                // {this.props.joinedEvents.map(event => {
                 return (
                   <div className="city-event">
                     <Link to={`events/${event.id}`} className="event-name">
@@ -67,10 +65,17 @@ class Dashboard extends React.Component {
                     <button
                       className="event-leave"
                       onClick={() => {
-                        this.props.deleteRsvp();
+                        // console.log(this.state.hostedEvents, e);
+                        let newHosted = this.state.hostedEvents.filter(e => {
+                          return e !== event;
+                        });
+                        console.log(newHosted);
+                        this.props
+                          .deleteEvent(event.id)
+                          .then(this.props.fetchEvents());
                       }}
                     >
-                      Leave Event
+                      Cancel Event
                     </button>
                   </div>
                 );

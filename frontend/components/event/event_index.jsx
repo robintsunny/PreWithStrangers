@@ -15,7 +15,6 @@ class EventIndex extends React.Component {
   }
 
   render() {
-    debugger;
     if (this.state.loading) {
       return <div> LOADING</div>;
     } else {
