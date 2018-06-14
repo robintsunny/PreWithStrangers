@@ -105,7 +105,9 @@ class SessionForm extends React.Component {
       <div className="login-form-container">
         <form className="login-form-box">
           <div className="welcome-message">{welcomeMessage}</div>
+
           <p className="welcome-message-tag">{welcomeMessageTag}</p>
+          <p className="redirector">{this.props.navLink}</p>
 
           <br />
           {this.renderErrors()}
