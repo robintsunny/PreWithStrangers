@@ -5,6 +5,7 @@ import {
 } from "../actions/event_actions";
 import { LOGOUT_CURRENT_USER } from "../actions/session_actions";
 import { DASHBOARD_EVENTS } from "../actions/dashboard_event_actions";
+import { REMOVE_RSVP } from "../actions/rsvp_actions";
 
 import merge from "lodash/merge";
 
@@ -23,8 +24,12 @@ const eventsReducer = (state = {}, action) => {
         [action.payload.event.id]: action.payload.event
       });
     case REMOVE_EVENT:
-      const newState = merge({}, state);
+      let newState = merge({}, state);
 
+      delete newState[action.eventId];
+      return newState;
+    case REMOVE_RSVP:
+      newState = merge({}, state);
       delete newState[action.eventId];
       return newState;
     case LOGOUT_CURRENT_USER:

@@ -42,6 +42,8 @@ const App = () => {
           path="/dashboard"
           component={DashboardContainer}
         />
+
+        <Redirect to="/" />
       </Switch>
 
       <FooterContainer />

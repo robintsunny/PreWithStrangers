@@ -13,7 +13,9 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
   }
-
+  componentDidMount() {
+    this.props.clearErrors(null);
+  }
   update(field) {
     return e =>
       this.setState({
@@ -34,13 +36,17 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-    return (
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>{error}</li>
-        ))}
-      </ul>
-    );
+    if (!!this.props.errors) {
+      return (
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li className="session-errors" key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
   }
 
   render() {

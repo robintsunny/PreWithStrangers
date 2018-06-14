@@ -40,12 +40,12 @@ class Dashboard extends React.Component {
                     <button
                       className="event-leave"
                       onClick={() => {
-                        console.log(this.props.rsvps);
-                        let id = this.props.rsvps.values.filter(
+                        let id = this.props.rsvps.filter(
                           t =>
                             t.event_id === event.id && t.user_id === currUsrId
                         );
-                        this.deleteRsvp(id);
+                        console.log(id);
+                        this.props.deleteRsvp(id[0].id);
                       }}
                     >
                       Leave Event
