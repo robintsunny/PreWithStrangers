@@ -70,18 +70,26 @@ class EventForm extends React.Component {
             <option value="" disabled selected>
               What City Are You Getting Pre In?
             </option>
-            <option value="San Francisco / Bay Area">
-              San Francisco / Bay Area
-            </option>
-            <option value="Los Angeles">Los Angeles</option>
+            <option value="Austin">Austin</option>
+            <option value="Chicago">Chicago</option>
+            <option value="Denver">Denver</option>
+            <option value="LA">Los Angeles</option>
+            <option value="Miami">Miami</option>
+            <option value="Montreal">Montreal</option>
+            <option value="NYC">New York City</option>
+            <option value="Philadelphia">Philadelphia</option>
             <option value="Portland">Portland</option>
             <option value="Seattle">Seattle</option>
-            <option value="New York City">New York City</option>
-            <option value="Boston">Boston</option>
-            <option value="Baltimore">Baltimore</option>
-            <option value="DC">DC</option>
-            <option value="Miami">Miami</option>
+            <option value="SFBay">San Francisco / Bay Area</option>
             <option value="Toronto">Toronto</option>
+            <option value="Vancouver">Vancouver</option>
+            <option value="Dublin">Dublin</option>
+            <option value="Istanbul">Istanbul</option>
+            <option value="London">London</option>
+            <option value="Seoul">Seoul</option>
+            <option value="Singapore">Singapore</option>
+            <option value="Sydney">Sydney</option>
+            <option value="Tokyo">Tokyo</option>
           </select>
 
           <label className="event-attr">

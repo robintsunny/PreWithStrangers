@@ -6,19 +6,43 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'faker'
+
+
+Austin = City.create(name:'Austin')
+Chicago = City.create(name:'Chicago')
+Denver = City.create(name:'Denver')
 LA = City.create(name:'Los Angeles')
+Miami = City.create(name:'Miami')
+Montreal = City.create(name:'Montreal')
+NYC = City.create(name:'New York City')
+Philadelphia = City.create(name:'Philadelphia')
 Portland = City.create(name:'Portland')
 Seattle = City.create(name:'Seattle')
 SFBay = City.create(name:'San Francisco / Bay Area')
-NYC = City.create(name:'New York City')
-Boston = City.create(name:'Boston')
+Toronto = City.create(name:'Toronto')
+Vancouver = City.create(name:'Vancouver')
 Dublin = City.create(name:'Dublin')
+London = City.create(name:'London')
 Singapore = City.create(name:'Singapore')
 Tokyo = City.create(name:'Tokyo')
 Istanbul = City.create(name:'Istanbul')
+Seoul = City.create(name:'Seoul')
 Sydney = City.create(name:'Sydney')
-DC = City.create(name:'DC')
-London = City.create(name:'London')
-Toronto = City.create(name:'Toronto')
-Baltimore = City.create(name:'Baltimore')
-Miami = City.create(name:'Miami')
+
+CITIES = [Austin, Chicago, Denver, LA, Miami, Montreal, NYC, Philadelphia, Portland, Seattle, SFBay,
+  Toronto, Vancouver, Dublin, London, Singapore, Tokyo, Istanbul, Seoul, Sydney]
+
+demo_user = User.create(fname: "Randy Savage", password: "savagerandy", email: "randy@gmail.com", home_city:"Austin")
+
+
+20.times do
+  name = Faker::Name.unique.first_name
+  email = name+ "@gmail.com"
+  password = 'ynnusnibor'
+  home_city = CITIES.sample.name
+  User.create(fname: name, email: email, password: password, home_city: home_city)
+end
+
+
+40.times do
