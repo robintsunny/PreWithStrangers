@@ -45,7 +45,7 @@ class Dashboard extends React.Component {
                             t.event_id === event.id && t.user_id === currUsrId
                         );
                         this.props.deleteRsvp(id[0].id);
-                        location.reload();
+                        // location.reload();
                       }}
                     >
                       Leave Event
