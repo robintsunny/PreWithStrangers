@@ -15,6 +15,7 @@ import CreateEventContainer from "./event/create_event_form_container";
 import EditEventContainer from "./event/edit_event_form_container";
 import DashboardContainer from "./dashboard/dashboard_container";
 import FooterContainer from "./footer/footer_container";
+import AboutContainer from "./about/about_container";
 
 const App = () => {
   return (
@@ -26,7 +27,12 @@ const App = () => {
         <AuthRoute path="/login" component={LogInFormContainer} />
         <Route exact path="/" component={SplashContainer} />
         <Route exact path="/events" component={EventIndexContainer} />
-        <Route exact path="/events/:eventId" component={EventShowContainer} />
+        <Route exact path="/about" component={AboutContainer} />
+        <ProtectedRoute
+          exact
+          path="/events/:eventId"
+          component={EventShowContainer}
+        />
         <Route
           exact
           path="/events/:eventId/edit"

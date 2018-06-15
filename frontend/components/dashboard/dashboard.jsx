@@ -44,7 +44,6 @@ class Dashboard extends React.Component {
                           t =>
                             t.event_id === event.id && t.user_id === currUsrId
                         );
-                        console.log(id);
                         this.props.deleteRsvp(id[0].id);
                       }}
                     >

@@ -7,7 +7,7 @@ const Splash = () => {
       <div className="sub-splash">
         <span className="splash-text">It's Dangerous To Lift Alone</span>
         <span className="splash-text-tag">
-          but you only realize that at the bottom of a squat
+          But You Only Realize That At The Bottom Of A Squat
         </span>
 
         <Link to={"/events"} className="lets-get-pre">

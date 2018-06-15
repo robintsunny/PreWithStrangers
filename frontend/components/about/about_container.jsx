@@ -1,15 +1,9 @@
 import { connect } from "react-redux";
 import React from "react";
 import { Link } from "react-router-dom";
-import Splash from "./splash";
-
-const msp = state => {
-  return {
-    currentUserId: state.session.id
-  };
-};
+import About from "./about";
 
 export default connect(
-  msp,
+  null,
   null
-)(Splash);
+)(About);

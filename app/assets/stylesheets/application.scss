@@ -121,6 +121,65 @@ a {
 /*  */
 /*  */
 /*  */
+
+/* ---------ABOUT--------- */
+.about-panel {
+  background-image: url(https://otctoronto.com/wp-content/uploads/2017/12/IMG_4103.jpg);
+
+  display: flex;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--overlay);
+
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  background-blend-mode: overlay;
+  align-items: center;
+  justify-content: center;
+}
+.about-panel-header {
+  font-size: 36px;
+  font-weight: 900;
+  color: white;
+}
+.about-panel-tag {
+  font-size: 22px;
+}
+
+.about-header {
+  // border: 1px solid black;
+  display: flex;
+  width: 50%;
+  margin: 10px auto;
+  font-size: 30px;
+  justify-content: center;
+  color: var(--button-color);
+  font-weight: 1000;
+}
+
+.about-paragraph {
+  // border: 1px solid black;
+  display: flex;
+  width: 40%;
+  margin: 15px auto;
+  line-height: 1.25;
+  font-size: 22px;
+  justify-content: center;
+}
+
+.about-ul {
+  margin: 5px 20px;
+}
+
+.about-li {
+  margin-bottom: 10px;
+  text-decoration: circle;
+}
+
 /* ---------LOGIN/SIGNUP FORM--------- */
 .welcome-message {
   color: var(--button-color);

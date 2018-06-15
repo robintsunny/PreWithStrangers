@@ -30,7 +30,7 @@ const eventsReducer = (state = {}, action) => {
       return newState;
     case REMOVE_RSVP:
       newState = merge({}, state);
-      delete newState[action.eventId];
+      newState[action.event.id] = action.event;
       return newState;
     case LOGOUT_CURRENT_USER:
       return {};

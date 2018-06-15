@@ -16,8 +16,8 @@ export const deleteRsvp = id => {
     return RsvpAPIUtil.deleteRsvp(id).then(payload => {
       return dispatch({
         type: REMOVE_RSVP,
-        rsvpId: payload.rsvp.id,
-        eventId: payload.event.id
+        rsvp: payload.rsvp,
+        event: payload.event
       });
     });
   };
