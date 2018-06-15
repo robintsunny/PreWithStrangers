@@ -1,6 +1,7 @@
 import React from "react";
 import EventIndexItem from "./event_index_item";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 
 class EventIndex extends React.Component {
   constructor(props) {
@@ -54,7 +55,9 @@ class EventIndex extends React.Component {
               {this.props.cities.map(city => {
                 return (
                   <div className="city-bar-item">
-                    <a href={`#${city.name}`}>{city.name}</a>
+                    <Link smooth to={`/events#${city.name}`}>
+                      {city.name}
+                    </Link>
                   </div>
                 );
               })}
@@ -66,7 +69,7 @@ class EventIndex extends React.Component {
               return (
                 <React.Fragment className="city-events">
                   <div className="entire-city-div">
-                    <a name={`${city.name}`} />
+                    <div id={`${city.name}`} />
                     <span className="city-name">{city.name}</span>
 
                     {city.event_ids.map(event_id => {
