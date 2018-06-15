@@ -39,6 +39,7 @@ Sydney = City.create!(name:'Sydney')
 demo_user = User.create!(fname: "Randy Savage", password: "savagerandy", email: "randy@gmail.com", home_city_id: Austin.id)
 
 desserts = [
+  'PROTEIN',
   'Oreos',
   'Ice Cream',
   'Brownie',
