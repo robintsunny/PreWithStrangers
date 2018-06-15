@@ -19,7 +19,8 @@
     "webpack": "^4.11.0",
     "webpack-cli": "^3.0.2"
   },
-  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "description":
+    "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
   "main": "index.js",
   "directories": {
@@ -28,7 +29,8 @@
   },
   "scripts": {
     "postinstall": "webpack",
-    "start": "webpack --w -d"
+    "start": "webpack --w -d",
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
