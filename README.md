@@ -6,6 +6,12 @@ PreWithStrangers, inspired by TeaWithStrangers, is a website that helps connect 
 
 The project was designed and built within a two-week timeframe, though I plan to continue adding improvements over time.
 
+- [Minimum Viable Product](https://github.com/robintsunny/PreworkoutWithStrangers/wiki/Minimum-Viable-Product-List)
+- [Database Schema](https://github.com/robintsunny/PreworkoutWithStrangers/wiki/Database-Schema)
+- [Component Hierarchy with Wireframes](https://github.com/robintsunny/PreworkoutWithStrangers/wiki/Component-Hierarchy-with-Wireframes)
+- [Routes](https://github.com/robintsunny/PreworkoutWithStrangers/wiki/Routes)
+- [Sample State](https://github.com/robintsunny/PreworkoutWithStrangers/wiki/Sample-State)
+
 ## Features
 
 - Secure frontend to backend user authentication using BCrypt.
