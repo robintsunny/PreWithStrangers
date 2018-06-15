@@ -29,7 +29,11 @@ class Api::EventsController < ApplicationController
     def update
       @event = current_user.hosted_events.find(params[:id])
 
-      if @event.update(event_params)
+      all_params = event_params
+      all_params[:city_id] = City.find_by(name: all_params[:city]).id
+      all_params.delete(:city)
+
+      if @event.update(all_params)
         render :show
       else
         render json: @event.errors.full_messages, status: 422

@@ -38,9 +38,11 @@ Sydney = City.create!(name:'Sydney')
 
 demo_user = User.create!(fname: "Randy Savage", password: "savagerandy", email: "randy@gmail.com", home_city_id: Austin.id)
 
-desserts = [
+junk_food = [
   'PROTEIN',
   'Oreos',
+  'Pancake',
+  'Waffle',
   'Ice Cream',
   'Brownie',
   'Cookie',
@@ -52,10 +54,13 @@ desserts = [
   'Cheesecake',
   'Donut',
   'Boba Tea',
-  "Pastries",
-  'Coffee', 'Chocolate', 'Cannoli', 'Baklava'
+  "PopTart",
+  'Coffee',
+  'Pizza',
+  'Taco'
 ]
-20.times do
+
+50.times do
   name = Faker::Name.unique.first_name
   email = name+ "@gmail.com"
   password = 'ynnusnibor'
@@ -64,11 +69,11 @@ desserts = [
 end
 
 
-50.times do
-  name = desserts.sample + " Time!"
-  description = Faker::ChuckNorris.unique.fact
-  date = Faker::Date.unique.forward(90)
-  time = ['12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'].sample + [':00 ',':30 '].sample + ['AM','PM'].sample
+150.times do
+  name = junk_food.sample + " Time!"
+  description = Faker::ChuckNorris.fact
+  date = Faker::Date.unique.forward(180)
+  time = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'].sample + [':00 ',':30 '].sample + ['AM','PM'].sample
   address = Faker::Address.unique.street_address
   city_id = City.all.sample.id
   host_id = User.all.sample.id
@@ -77,7 +82,7 @@ end
 
 
 i = 0
-until i == 100
+until i == 250
   made = []
   _user = User.all.sample
   _event = Event.all.sample

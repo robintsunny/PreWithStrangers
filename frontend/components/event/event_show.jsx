@@ -65,6 +65,8 @@ class EventShow extends React.Component {
           <div className="event-show-left">
             <div className="event-show-details">
               <div className="show-name">{this.props.event.name}</div>
+
+              <div className="show-attr">🌎 {this.props.cityName}</div>
               <div className="show-attr">📍 {this.props.event.address}</div>
               <div className="show-attr">📅 {this.props.event.date}</div>
               <div className="show-attr">⏰ {this.props.event.time}</div>

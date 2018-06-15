@@ -16,31 +16,107 @@ The project was designed and built within a two-week timeframe, though I plan to
 
 ### Pre Times
 
-The Pre Times feed renders all created events with a City Navigation Bar to scroll to the city's event. The anchor tag functionality will not work with React Router, so implementing React Route Hash Link solved the problem.
+The Pre Times feed renders all created events with a City Navigation Bar to scroll to the city's event. Only cities with events will populate the city bar.
 
-# INSERT PICTURE
+![citybar](https://media.giphy.com/media/1zRgYRUCiP0T1Rg8iM/giphy.gif)
 
-# INSERT CODE BLOCK
+The anchor tag functionality will not work with React Router, so implementing React Route Hash Link solved the problem.
 
-Only cities with events will populate the city bar.
+```javascript
+import { HashLink as Link } from "react-router-hash-link";
 
-# INSERT PIC
+// previous code to collect events and sort by city
+<div className="city-bar-items">
+              {this.props.cities.map(city => {
+                return (
+                  <div className="city-bar-item">
+                    <Link smooth to={`/events#${city.name}`}>
+                      {city.name}
+                    </Link>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="cities-events">
+            {this.props.cities.map(city => {
+              return (
+                <React.Fragment className="city-events">
+                  <div className="entire-city-div">
+                    <div id={`${city.name}`} />
+                    <span className="city-name">{city.name}</span>
+
+// more code to render events
+```
 
 ### Dashboard
 
 The Dashboard updates to display all events that the current logged-in user has joined or is hosting. From the Dashboardm the user can cancel a hosted event or can leave a joined event and the page will automatically render the new collection of Pre Times.
 
-# INSERT IMAGE
+![dashbaord](https://media.giphy.com/media/mYsAJlTYKD4ydwCfLe/giphy.gif)
 
 To keep code DRY, the session form was shared between the sign up and sign in containers.
 
-# INSERT CODE BLOCK
+```javascript
+// session form
+<input
+  onClick={this.handleSubmit}
+  className="session-submit"
+  type="submit"
+  value={this.props.formType}
+/>
+```
+
+```javascript
+// signup form container
+const mapStateToProps = state => {
+  return {
+    errors: state.errors.session,
+    formType: "SIGN UP",
+    navLink: <Link to="/login">Already have an account?</Link>
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    processForm: user => dispatch(signup(user)),
+    demoLogin: user => dispatch(login(user)),
+    clearErrors: error => dispatch(receiveErrors(error))
+  };
+};
+```
+
+```javascript
+// signin form container
+const mapStateToProps = state => {
+  return {
+    errors: state.errors.session,
+    formType: "SIGN IN",
+    navLink: <Link to="/signup">No account?</Link>
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    processForm: user => dispatch(login(user)),
+    demoLogin: user => dispatch(login(user)),
+    clearErrors: error => dispatch(receiveErrors(error))
+  };
+};
+```
 
 ### Event Creating and Editing
 
 Users can create events and edit them as well. Events require an event name, date, time, address, and description. The current user's user ID will be set as the event's host ID.
 
-# INSERT GIF
+#### Create Pre time
+
+![createevent](https://media.giphy.com/media/9oIrQS1kbtKFiJa6Sv/giphy.gif)
+
+#### Edit Pre Time
+
+![editevent](https://media.giphy.com/media/1wXeLBOcdQY81igYcf/giphy.gif)
 
 ## Project Design
 
@@ -51,10 +127,6 @@ PreWithStrangers was designed for functionality and simplicity. Produced in 2 we
 Rails was chosen due to its RESTful architecture and relational database support. This was a small-scale portfolio piece built in 2 weeks. Thus, Rails and Heroku were chosen to handle the load.
 
 Frontend Redux states were set up such that there were separate reducers for users, events, cities, and RSVPs. This kept the state normalized which eased the task of keeping things updated when changes were made in the database.
-
-### Additional Resources
-
-#??????
 
 ## Possible Future Features
 
