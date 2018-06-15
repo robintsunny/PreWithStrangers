@@ -25,7 +25,7 @@ class Dashboard extends React.Component {
       return (
         <div>
           <div className="rob">
-            <div className="signed-up-logo">Pre Times you're ATTENDING!</div>
+            <div className="signed-up-logo">Pre Times You're ATTENDING!</div>
             <div className="dashboard-wrapper">
               {this.props.joinedEvents.map(event => {
                 return (
@@ -45,6 +45,7 @@ class Dashboard extends React.Component {
                             t.event_id === event.id && t.user_id === currUsrId
                         );
                         this.props.deleteRsvp(id[0].id);
+                        location.reload();
                       }}
                     >
                       Leave Event

@@ -29,6 +29,10 @@ const eventsReducer = (state = {}, action) => {
       delete newState[action.eventId];
       return newState;
     case REMOVE_RSVP:
+      // newState = merge({}, state);
+      // delete newState[action.event.id];
+      // return newState;
+
       newState = merge({}, state);
       newState[action.event.id] = action.event;
       return newState;

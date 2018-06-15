@@ -38,7 +38,22 @@ Sydney = City.create!(name:'Sydney')
 
 demo_user = User.create!(fname: "Randy Savage", password: "savagerandy", email: "randy@gmail.com", home_city_id: Austin.id)
 
-
+desserts = [
+  'Oreos',
+  'Ice Cream',
+  'Brownie',
+  'Cookie',
+  'Pie',
+  'Cake',
+  'Cupcake',
+  'Smores',
+  'Pudding',
+  'Cheesecake',
+  'Donut',
+  'Boba Tea',
+  "Pastries",
+  'Coffee', 'Chocolate', 'Cannoli', 'Baklava'
+]
 20.times do
   name = Faker::Name.unique.first_name
   email = name+ "@gmail.com"
@@ -49,7 +64,7 @@ end
 
 
 50.times do
-  name = Faker::Dessert.variety + " Time!"
+  name = desserts.sample + " Time!"
   description = Faker::ChuckNorris.unique.fact
   date = Faker::Date.unique.forward(90)
   time = ['12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'].sample + [':00 ',':30 '].sample + ['AM','PM'].sample
