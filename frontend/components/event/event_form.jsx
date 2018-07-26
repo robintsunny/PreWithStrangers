@@ -7,16 +7,36 @@ class EventForm extends React.Component {
     this.state = this.props.event;
   }
 
+  componentDidMount() {
+    this.props.clearErrors(null);
+  }
+
   update(field) {
     return e => {
       this.setState({ [field]: e.target.value });
     };
   }
 
+  renderErrors() {
+    if (!!this.props.errors) {
+      return (
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li className="session-errors" key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
+  }
+
   render() {
     return (
       <div className="overhead">
         <h3 className="event-form-header">{this.props.formType} a Pre Time!</h3>
+        {this.renderErrors()}
+
         <form
           className="event-form"
           onSubmit={e => {

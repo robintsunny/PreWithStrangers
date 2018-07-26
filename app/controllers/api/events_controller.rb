@@ -14,7 +14,11 @@ class Api::EventsController < ApplicationController
 
     def create
       all_params = event_params
-      all_params[:city_id] = City.find_by(name: all_params[:city]).id
+      city = City.find_by(name: all_params[:city])
+
+      if city
+        all_params[:city_id] = city.id
+      end
       all_params.delete(:city)
 
       @event = Event.new(all_params)

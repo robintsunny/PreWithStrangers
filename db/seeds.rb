@@ -39,7 +39,7 @@ Sydney = City.create!(name:'Sydney')
 demo_user = User.create!(fname: "Randy Savage", password: "savagerandy", email: "randy@gmail.com", home_city_id: Austin.id)
 
 junk_food = [
-  'PROTEIN',
+  'Protein',
   'Oreos',
   'Pancake',
   'Waffle',
@@ -60,6 +60,8 @@ junk_food = [
   'Taco'
 ]
 
+event_type = %w( Party Time Blowout Feast Shindig Special Soiree Banquet Bash Extravaganza  )
+
 50.times do
   name = Faker::Name.unique.first_name
   email = name+ "@gmail.com"
@@ -70,7 +72,7 @@ end
 
 
 150.times do
-  name = junk_food.sample + " Time!"
+  name = junk_food.sample + ' ' + event_type.sample
   description = Faker::ChuckNorris.fact
   date = Faker::Date.unique.forward(180)
   time = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'].sample + [':00 ',':30 '].sample + ['AM','PM'].sample

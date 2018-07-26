@@ -1,6 +1,7 @@
 import React from "react";
 // import { Link } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
+import { rsvpSelector } from "../../reducers/selectors";
 
 class EventShow extends React.Component {
   componentDidMount() {
@@ -8,7 +9,18 @@ class EventShow extends React.Component {
   }
 
   render() {
-    if (!this.props.event || !this.props.host || !this.props.rsvps) {
+    let host = !this.props.event
+      ? undefined
+      : this.props.users[this.props.event.host_id];
+
+    let cityName = !this.props.cities[this.props.event.city_id]
+      ? undefined
+      : this.props.cities[this.props.event.city_id].name;
+    let rsvps = !this.props.event
+      ? undefined
+      : rsvpSelector(this.props.rsvps, this.props.event.id);
+
+    if (!this.props.event || !host || !this.props.rsvps) {
       return <div>loading</div>;
     } else {
       let editButton;
@@ -66,7 +78,7 @@ class EventShow extends React.Component {
             <div className="event-show-details">
               <div className="show-name">{this.props.event.name}</div>
 
-              <div className="show-attr">🌎 {this.props.cityName}</div>
+              <div className="show-attr">🌎 {cityName}</div>
               <div className="show-attr">📍 {this.props.event.address}</div>
               <div className="show-attr">📅 {this.props.event.date}</div>
               <div className="show-attr">⏰ {this.props.event.time}</div>
@@ -81,11 +93,9 @@ class EventShow extends React.Component {
           </div>
 
           <div className="event-show-right">
-            <div className="about-the-host">
-              About The Host: {this.props.host.fname}
-            </div>
+            <div className="about-the-host">About The Host: {host.fname}</div>
             <div className="host-bio">
-              {this.props.host.fname} hasn't submitted a profile yet!
+              {host.fname} hasn't submitted a profile yet!
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { createEvent } from "../../actions/event_actions";
+import { receiveErrors } from "../../actions/event_actions";
 import EventForm from "./event_form";
 
 const msp = state => {
@@ -13,13 +14,15 @@ const msp = state => {
       city: "",
       host_id: state.session.id
     },
-    formType: "Create"
+    formType: "Create",
+    errors: state.errors.event
   };
 };
 
 const mdp = dispatch => {
   return {
-    submitEvent: event => dispatch(createEvent(event))
+    submitEvent: event => dispatch(createEvent(event)),
+    clearErrors: error => dispatch(receiveErrors(error))
   };
 };
 

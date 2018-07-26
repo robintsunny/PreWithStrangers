@@ -12,13 +12,16 @@ const msp = (state, ownProps) => {
   return {
     event: event_var,
     currentUserId: state.session.id,
-    host: !event_var ? undefined : state.entities.users[event_var.host_id],
-    cityName: !event_var
-      ? undefined
-      : state.entities.cities[event_var.city_id].name,
-    rsvps: !event_var
-      ? undefined
-      : rsvpSelector(state.entities.rsvps, event_var.id),
+    users: state.entities.users,
+    cities: state.entities.cities,
+    rsvps: state.entities.rsvps,
+    // host: !event_var ? undefined : state.entities.users[event_var.host_id],
+    // cityName: !event_var
+    //   ? undefined
+    //   : state.entities.cities[event_var.city_id].name,
+    // rsvps: !event_var
+    //   ? undefined
+    //   : rsvpSelector(state.entities.rsvps, event_var.id),
     currentUserRsvp: state.entities.rsvps[state.session.id]
   };
 };
