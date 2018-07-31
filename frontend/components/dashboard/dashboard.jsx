@@ -17,7 +17,7 @@ class Dashboard extends React.Component {
 
   render() {
     if (this.state.loading) {
-      return <div> LOADING</div>;
+      return <div>LOADING</div>;
     } else if (!this.props.joinedEvents && !this.props.hostedEvents) {
       return <div> NO EVENTS!</div>;
     } else {
@@ -27,6 +27,7 @@ class Dashboard extends React.Component {
           <div className="rob">
             <div className="signed-up-logo">Pre Times You're ATTENDING!</div>
             <div className="dashboard-wrapper">
+
               {this.props.joinedEvents.map(event => {
                 return (
                   <div className="city-event">
